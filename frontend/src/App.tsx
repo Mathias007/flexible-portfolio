@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import {
+    About,
+    Account,
+    Aside,
+    Contact,
+    Home,
+    Portfolio,
+    Services,
+} from "./components/sections";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import { StyleSwitcher } from "./components/general";
+
+import "./css/style.css";
+import "./css/style-2.css";
+import "./css/style-switcher.css";
+
+function App(): JSX.Element {
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+
+    const toggleDarkMode = (): void => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+    return (
+        <div className={isDarkMode ? "dark" : "light"} data-testid="app">
+            <div className="main-container">
+                <Aside />
+                <div className="main-content">
+                    <Home />
+                    <About />
+                    <Services />
+                    <Portfolio />
+                    <Contact />
+                    <Account />
+                </div>
+            </div>
+            <StyleSwitcher
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+            />
+        </div>
+    );
 }
 
-export default App
+export default App;
