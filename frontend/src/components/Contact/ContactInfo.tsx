@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { ContactInfoItem } from ".";
-import { IContactInfoData } from "../../data/contact.data";
+import { contactModels } from "../../models";
 
 interface IContactInfoPros {
-    contactInfoData: IContactInfoData[];
+    contactInfoData: contactModels.IContactInfoData[];
 }
 
 const ContactInfo: FC<IContactInfoPros> = ({ contactInfoData }) => {
