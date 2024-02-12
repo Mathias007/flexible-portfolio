@@ -1,21 +1,25 @@
 import React from "react";
 
 import { PortfolioItem } from ".";
+import { portfolioModels } from "../../models";
 
-import { IPortfolioData } from "../../data/portfolio.data";
+import SampleProjectLogo from "../../assets/portfolio1.jpg";
 
 interface IPortfolioContentProps {
-    portfolioData: IPortfolioData[];
+    portfolioData: portfolioModels.IPortfolioData[];
 }
 
-const PortfolioContent: React.FC<IPortfolioContentProps> = ({ portfolioData }) => {
+const PortfolioContent: React.FC<IPortfolioContentProps> = ({
+    portfolioData,
+}) => {
     return (
         <div className="row">
             {portfolioData.map((project) => {
                 return (
                     <PortfolioItem
                         key={project.id}
-                        logo={project.logo}
+                        // logo={project.logo}
+                        logo={SampleProjectLogo}
                         description={project.description}
                     />
                 );

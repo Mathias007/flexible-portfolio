@@ -2,13 +2,17 @@ import { FC } from "react";
 
 import { SkillsItem } from ".";
 
-import skillsData, { ISkillsData } from "../../data/skills.data";
+import { skillsModels } from "../../models";
 
-const AboutSkills: FC = () => {
+interface IAboutSkills {
+    skillsData: skillsModels.ISkillsData[];
+}
+
+const AboutSkills: FC<IAboutSkills> = ({ skillsData }) => {
     return (
         <div className="skills padd-15" data-testid="about-skills">
             <div className="row">
-                {skillsData.map((data: ISkillsData) => {
+                {skillsData.map((data: skillsModels.ISkillsData) => {
                     return (
                         <SkillsItem
                             key={data.id}

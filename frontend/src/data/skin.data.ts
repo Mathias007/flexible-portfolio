@@ -1,10 +1,6 @@
-export interface IStyleOption {
-    id: number;
-    title: string;
-    color: string;
-}
+import { skinModels } from "../models";
 
-const styleOptions: IStyleOption[] = [
+const styleOptions: skinModels.IStyleOption[] = [
     { id: 0, title: "color-1", color: "#ec1839" },
     { id: 1, title: "color-2", color: "#fa5b0f" },
     { id: 2, title: "color-3", color: "#37b182" },
