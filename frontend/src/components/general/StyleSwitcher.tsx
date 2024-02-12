@@ -1,7 +1,8 @@
 import { useState, FC } from "react";
 import Icon from "./Icon";
 
-import styleOptions, { IStyleOption } from "../../data/skin.data";
+import styleOptions from "../../data/skin.data";
+import { skinModels } from "../../models";
 
 interface IStyleSwitcherProps {
     isDarkMode: boolean;
@@ -52,7 +53,7 @@ const StyleSwitcher: FC<IStyleSwitcherProps> = ({
             </div>
             <h4>Theme Colors</h4>
             <div className="colors">
-                {styleOptions.map((style: IStyleOption) => (
+                {styleOptions.map((style: skinModels.IStyleOption) => (
                     <span
                         key={style.id}
                         className={style.title}
