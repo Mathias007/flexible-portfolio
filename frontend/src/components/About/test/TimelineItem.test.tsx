@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { TimelineItem } from "..";
 
-import { ITimelineData } from "../../../data/timeline.data";
+import { timelineModels } from "../../../models";
 
-const mockTimelineData: ITimelineData = {
+const mockTimelineData: timelineModels.ITimelineData = {
     id: 1,
     title: "Test Title",
     description: "Test Description",

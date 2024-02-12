@@ -1,11 +1,11 @@
 import { FC } from "react";
 
 import { TimelineItem } from ".";
-import { ITimelineData } from "../../data/timeline.data";
+import { timelineModels } from "../../models";
 
 interface IAboutTimelineProps {
     header: string;
-    data: ITimelineData[];
+    data: timelineModels.ITimelineData[];
     className: string;
 }
 
@@ -22,7 +22,7 @@ const AboutTimeline: FC<IAboutTimelineProps> = ({
             <div className="row">
                 <div className="timeline-box padd-15">
                     <div className="timeline shadow-dark">
-                        {data.map((timeline: ITimelineData) => {
+                        {data.map((timeline: timelineModels.ITimelineData) => {
                             return (
                                 <TimelineItem
                                     key={timeline.id}

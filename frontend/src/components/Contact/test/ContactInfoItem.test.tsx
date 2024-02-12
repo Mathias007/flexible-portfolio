@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { ContactInfoItem } from "..";
 
-import { IContactInfoData } from "../../../data/contact.data";
+import { contactModels } from "../../../models";
 
-const mockContactInfoItem: IContactInfoData = {
+const mockContactInfoItem: contactModels.IContactInfoData = {
     id: 1,
     label: "Address",
     info: "123 Main Street, City, Country",

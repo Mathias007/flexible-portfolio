@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { SkillsItem } from "..";
 
-import { ISkillsData } from "../../../data/skills.data";
+import { skillsModels } from "../../../models";
 
-const mockSkillsData: ISkillsData = {
+const mockSkillsData: skillsModels.ISkillsData = {
     id: 1,
     skill: "Test Skill",
     value: 75,
