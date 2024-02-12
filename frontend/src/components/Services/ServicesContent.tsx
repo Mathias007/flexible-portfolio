@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { ServicesItem } from ".";
 
-import { IServicesData } from "../../data/services.data";
+import { servicesModels } from "../../models";
 
 interface IServicesContentProps {
-    services: IServicesData[];
+    services: servicesModels.IServicesData[];
 }
 
 const ServicesContent: FC<IServicesContentProps> = ({ services }) => {

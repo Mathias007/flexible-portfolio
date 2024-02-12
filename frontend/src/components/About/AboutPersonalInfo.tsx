@@ -1,10 +1,14 @@
 import { FC } from "react";
 
-import personalData from "../../data/personal.data";
+import { personalModels } from "../../models";
 
 import { PersonalInfoButtons, PersonalInfoItem } from ".";
 
-const AboutPersonalInfo: FC = () => {
+interface IAboutPersonalInfo {
+    personalData: personalModels.IPersonalData[];
+}
+
+const AboutPersonalInfo: FC<IAboutPersonalInfo> = ({ personalData }) => {
     return (
         <div
             className="personal-info padd-15"

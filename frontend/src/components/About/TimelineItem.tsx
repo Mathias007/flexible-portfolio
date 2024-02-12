@@ -1,9 +1,9 @@
 import { FC } from "react";
 
 import { Icon } from "../general";
-import { ITimelineData } from "../../data/timeline.data";
+import { timelineModels } from "../../models";
 
-const TimelineItem: FC<ITimelineData> = ({
+const TimelineItem: FC<timelineModels.ITimelineData> = ({
     title,
     description,
     icon,

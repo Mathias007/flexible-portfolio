@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { AccountSocialButton } from ".";
 
-import { ISocialData } from "../../data/social.data";
+import { socialModels } from "../../models";
 
 interface IAccountIntroductionProps {
-    socialData: ISocialData[];
+    socialData: socialModels.ISocialData[];
 }
 
 const AccountIntroduction: FC<IAccountIntroductionProps> = ({ socialData }) => {
@@ -20,7 +20,7 @@ const AccountIntroduction: FC<IAccountIntroductionProps> = ({ socialData }) => {
                 contact
             </a>
             <div className="social-media">
-                {socialData.map((social: ISocialData) => {
+                {socialData.map((social: socialModels.ISocialData) => {
                     return (
                         <AccountSocialButton
                             key={social.id}
