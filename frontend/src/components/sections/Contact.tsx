@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 import {
     ContactSectionHeading,
@@ -7,9 +7,28 @@ import {
     ContactTitle,
 } from "../Contact";
 
-import contactInfoData from "../../data/contact.data";
+import { contactModels } from "../../models";
 
 const Contact: FC = () => {
+    const [contactInfoData, setSocialData] = useState<contactModels.IContactInfoData[]>([]);
+
+    useEffect(() => {
+        const fetchContactInfoData = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/api/contact");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch contact info data");
+                }
+                const data = await response.json();
+                setSocialData(data);
+            } catch (error) {
+                console.error("Error fetching contact info data:", error);
+            }
+        };
+
+        fetchContactInfoData();
+    }, []);
+
     return (
         <section
             className="contact section"

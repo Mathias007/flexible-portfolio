@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { ISkillsData } from "../../data/skills.data";
+import { skillsModels } from "../../models";
 
-const SkillsItem: FC<ISkillsData> = ({ skill, value }) => {
+const SkillsItem: FC<skillsModels.ISkillsData> = ({ skill, value }) => {
     return (
         <div className="skill-item padd-15" data-testid="skills-item">
             <h5>{skill}</h5>

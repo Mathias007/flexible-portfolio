@@ -1,15 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import { AccountIntroduction } from "..";
 
-import socialData from "../../../data/social.data";
+import { socialModels } from "../../../models";
 
 test("renders the AccountIntroduction component", () => {
-    render(<AccountIntroduction socialData={socialData} />);
+    const mockedSocialData: socialModels.ISocialData[] = [
+        { id: 1, type: "facebook", link: "https://facebook.com" },
+        { id: 2, type: "twitter", link: "https://twitter.com" },
+    ];
+
+    render(<AccountIntroduction socialData={mockedSocialData} />);
     const accountIntroduction = screen.getByTestId("account-introduction");
 
     expect(accountIntroduction).toBeInTheDocument();
 
     const socialButtons = screen.getAllByTestId("account-social-button");
 
-    expect(socialButtons.length).toBe(socialData.length);
+    expect(socialButtons.length).toBe(mockedSocialData.length);
 });
