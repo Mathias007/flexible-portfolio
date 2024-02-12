@@ -2,10 +2,10 @@ import { FC, useState } from "react";
 
 import NavigationItem from "./NavigationItem";
 
-import { INavigationData } from "../../data/navigation.data";
+import { navigationModels } from "../../models";
 
 interface INavigationProps {
-    navigationData: INavigationData[];
+    navigationData: navigationModels.INavigationData[];
 }
 
 const Navigation: FC<INavigationProps> = ({ navigationData }) => {
@@ -17,7 +17,7 @@ const Navigation: FC<INavigationProps> = ({ navigationData }) => {
 
     return (
         <ul className="nav" data-testid="navigation">
-            {navigationData.map((item: INavigationData) => (
+            {navigationData.map((item: navigationModels.INavigationData) => (
                 <NavigationItem
                     key={item.id}
                     id={item.id}

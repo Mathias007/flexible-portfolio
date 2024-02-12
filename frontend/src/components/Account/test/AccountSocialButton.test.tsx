@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 
 import { AccountSocialButton } from "..";
-import { ISocialData } from "../../../data/social.data";
+import { socialModels } from "../../../models";
 
 test("renders the AccountSocialButton component", () => {
-    const mockedSocialData: ISocialData[] = [
+    const mockedSocialData: socialModels.ISocialData[] = [
         { id: 1, type: "facebook", link: "https://facebook.com" },
         { id: 2, type: "twitter", link: "https://twitter.com" },
     ];

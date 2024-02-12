@@ -2,9 +2,9 @@ import { FC } from "react";
 
 import Icon from "../general/Icon";
 
-import { INavigationData } from "../../data/navigation.data";
+import { navigationModels } from "../../models";
 
-interface INavigationItemProps extends INavigationData {
+interface INavigationItemProps extends navigationModels.INavigationData {
     isActive: boolean;
     onItemClick: () => void;
 }

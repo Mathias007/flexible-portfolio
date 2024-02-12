@@ -1,11 +1,6 @@
-export interface INavigationData {
-    id: number;
-    label: string;
-    link: string;
-    icon: string;
-}
+import { navigationModels } from "../models";
 
-const navigationData: INavigationData[] = [
+const navigationData: navigationModels.INavigationData[] = [
     { id: 0, label: "Home", link: "#home", icon: "home" },
     { id: 1, label: "About", link: "#about", icon: "person" },
     { id: 2, label: "Services", link: "#services", icon: "services" },
