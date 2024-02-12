@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 import {
     PortfolioTitle,
@@ -6,9 +6,28 @@ import {
     PortfolioContent,
 } from "../Portfolio";
 
-import portfolioData from "../../data/portfolio.data";
+import { portfolioModels } from "../../models";
 
 const Portfolio: FC = () => {
+    const [portfolioData, setSocialData] = useState<portfolioModels.IPortfolioData[]>([]);
+
+    useEffect(() => {
+        const fetchPortfolioData = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/api/portfolio");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch portfolio data");
+                }
+                const data = await response.json();
+                setSocialData(data);
+            } catch (error) {
+                console.error("Error fetching portfolio data:", error);
+            }
+        };
+
+        fetchPortfolioData();
+    }, []);
+    
     return (
         <section
             className="portfolio section"
