@@ -1,16 +1,21 @@
 import { Request, Response } from "express";
-import { SkillsModels } from "../models";
+import { SkillsService } from "../services";
 
 class SkillsController {
+    private skillsService: SkillsService;
+
+    constructor(skillsService: SkillsService) {
+        this.skillsService = skillsService;
+    }
+
     getSkillsData = async (req: Request, res: Response) => {
-        const skillsData: SkillsModels.ISkillsData[] = [
-            { id: 0, skill: "JS", value: 76 },
-            { id: 1, skill: "PHP", value: 24 },
-            { id: 2, skill: "HTML", value: 58 },
-            { id: 3, skill: "Bootstrap", value: 19 },
-            { id: 4, skill: "CSS", value: 85 },
-        ];
-        res.json(skillsData);
+        try {
+            const skillsData = await this.skillsService.getSkillsData();
+            res.json(skillsData);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Internal server error" });
+        }
     };
 }
 
