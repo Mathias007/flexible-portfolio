@@ -1,20 +1,23 @@
 import { Request, Response } from "express";
-import { PersonalModels } from "../models";
+import { PersonalService } from "../services";
 
 class PersonalController {
-    getPersonalData = async (req: Request, res: Response) => {
-        const personalData: PersonalModels.IPersonalData[] = [
-            { id: 0, label: "Birthday", value: "24 may 1995" },
-            { id: 1, label: "Age", value: "28" },
-            { id: 2, label: "Website", value: "www.egildia.pl" },
-            { id: 3, label: "Email", value: "matstawowski@gmail.com" },
-            { id: 4, label: "Degree", value: "CS" },
-            { id: 5, label: "Phone", value: "21 37 00 00" },
-            { id: 6, label: "City", value: "Katowice" },
-            { id: 7, label: "Freelance", value: "Available" },
-        ];
+    private personalService: PersonalService;
 
-        res.json(personalData);
+    constructor(personalService: PersonalService) {
+        this.personalService = personalService;
+    }
+
+    getPersonalData = async (req: Request, res: Response) => {
+        try {
+            const contactInfoData =
+                await this.personalService.getPersonalData();
+
+            res.json(contactInfoData);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Internal server error" });
+        }
     };
 }
 
