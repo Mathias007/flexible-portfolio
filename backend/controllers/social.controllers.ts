@@ -1,18 +1,21 @@
 import { Request, Response } from "express";
-import { SocialModels } from "../models";
+import { SocialService } from "../services";
 
 class SocialController {
-    getSocialMediata = async (req: Request, res: Response) => {
-        const socialData: SocialModels.ISocialData[] = [
-            { id: 0, type: "facebook", link: "#" },
-            { id: 1, type: "twitter", link: "#" },
-            { id: 2, type: "instagram", link: "#" },
-            { id: 3, type: "youtube", link: "#" },
-            { id: 4, type: "linkedin", link: "#" },
-            { id: 5, type: "github", link: "#" },
-        ];
+    private socialService: SocialService;
 
-        res.json(socialData);
+    constructor(socialService: SocialService) {
+        this.socialService = socialService;
+    }
+
+    getSocialMediata = async (req: Request, res: Response) => {
+        try {
+            const socialData = await this.socialService.getSocialData();
+            res.json(socialData);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Internal server error" });
+        }
     };
 }
 
