@@ -2,7 +2,7 @@ import * as contactModels from "./contact.models";
 import * as navigationModels from "./navigation.models";
 import * as personalModels from "./personal.models";
 import * as portfolioModels from "./portfolio.models";
-import * as servicesModels from "./services.models";
+import * as toolsModels from "./tools.models";
 import * as skillsModels from "./skills.models";
 import * as skinModels from "./skin.models";
 import * as socialModels from "./social.models";
@@ -13,7 +13,7 @@ export {
     navigationModels,
     personalModels,
     portfolioModels,
-    servicesModels,
+    toolsModels,
     skillsModels,
     skinModels,
     socialModels,

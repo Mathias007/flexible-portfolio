@@ -1,23 +1,27 @@
-import cors from "cors";
 import express from "express";
+import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
+import cors from "cors";
 
 import router from "./routes";
 
-dotenv.config();
+import { ConfigVariables } from "./config";
+
+const { CORS_ORIGIN, CONNECTION_STRING, PORT_NUMBER } = ConfigVariables;
+
 const app = express();
-const port = Number(process.env.SERVER_PORT);
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL,
+    origin: CORS_ORIGIN,
 };
+
+mongoose.connect(CONNECTION_STRING);
 
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 app.use("/api", router);
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT_NUMBER, () => {
+    console.log(`Server is running on http://localhost:${PORT_NUMBER}`);
 });
