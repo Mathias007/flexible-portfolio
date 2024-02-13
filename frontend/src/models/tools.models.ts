@@ -1,4 +1,4 @@
-export interface IServicesData {
+export interface IToolsData {
     id: number;
     title: string;
     description: string;
