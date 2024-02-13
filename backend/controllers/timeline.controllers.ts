@@ -1,66 +1,21 @@
 import { Request, Response } from "express";
-import { TimelineModels } from "../models";
+import { TimelineService } from "../services";
 
 class TimelineController {
+    private timelineService: TimelineService;
+
+    constructor(timelineService: TimelineService) {
+        this.timelineService = timelineService;
+    }
+
     getTimelineData = async (req: Request, res: Response) => {
-        const educationTimelineData: TimelineModels.ITimelineData[] = [
-            {
-                id: 0,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-            {
-                id: 1,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-            {
-                id: 2,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-        ];
-
-        const experienceTimelineData: TimelineModels.ITimelineData[] = [
-            {
-                id: 0,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-            {
-                id: 1,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-            {
-                id: 2,
-                title: "Master in Computer Science",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto ea architecto eaque iste aliquam est, sequi maiores, odit rerum repudiandae dicta magni vitae quo.",
-                icon: "calendar",
-                date: "2013 - 2015",
-            },
-        ];
-
-        res.json({
-            educationTimelineData,
-            experienceTimelineData,
-        });
+        try {
+            const timelineData = await this.timelineService.getTimelineData();
+            res.json(timelineData);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Internal server error" });
+        }
     };
 }
 
