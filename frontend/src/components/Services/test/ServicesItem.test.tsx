@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { ServicesItem } from "..";
 
-import { servicesModels } from "../../../models";
+import { toolsModels } from "../../../models";
 
-const sampleProps: servicesModels.IServicesData = {
+const sampleProps: toolsModels.IToolsData = {
     id: 1,
     title: "Web Design",
     description: "Lorem ipsum dolor sit amet",

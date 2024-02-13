@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { ServicesContent } from "..";
 
-import { servicesModels } from "../../../models";
+import { toolsModels } from "../../../models";
 
-const sampleServicesData: servicesModels.IServicesData[] = [
+const sampleServicesData: toolsModels.IToolsData[] = [
     {
         id: 1,
         title: "Service 1",
