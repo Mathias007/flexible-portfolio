@@ -1,18 +1,22 @@
 import { Request, Response } from "express";
-import { PortfolioModels } from "../models";
+import { PortfolioService } from "../services";
 
 class PortfolioController {
-    getPortfolioProjectsData = async (req: Request, res: Response) => {
-        const portfolioData: PortfolioModels.IPortfolioData[] = [
-            { id: 0, logo: "link_do_logo0", description: "project" },
-            { id: 1, logo: "link_do_logo2", description: "project" },
-            { id: 2, logo: "link_do_logo2", description: "project" },
-            { id: 3, logo: "link_do_logo3", description: "project" },
-            { id: 4, logo: "link_do_logo4", description: "project" },
-            { id: 5, logo: "link_do_logo5", description: "project" },
-        ];
+    private portfolioService: PortfolioService;
 
-        res.json(portfolioData);
+    constructor(portfolioService: PortfolioService) {
+        this.portfolioService = portfolioService;
+    }
+
+    getPortfolioProjectsData = async (req: Request, res: Response) => {
+        try {
+            const portfolioData =
+                await this.portfolioService.getPortfolioData();
+            res.json(portfolioData);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: "Internal server error" });
+        }
     };
 }
 

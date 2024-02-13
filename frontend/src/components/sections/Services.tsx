@@ -1,15 +1,15 @@
 import { FC, useEffect, useState } from "react";
 
 import { ServicesTitle, ServicesContent } from "../Services";
-import { servicesModels } from "../../models";
+import { toolsModels } from "../../models";
 
 const Services: FC = () => {
-    const [servicesData, setSocialData] = useState<servicesModels.IServicesData[]>([]);
+    const [servicesData, setSocialData] = useState<toolsModels.IToolsData[]>([]);
 
     useEffect(() => {
         const fetchServicesData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/api/services");
+                const response = await fetch("http://localhost:3000/api/tools");
                 if (!response.ok) {
                     throw new Error("Failed to fetch services data");
                 }
