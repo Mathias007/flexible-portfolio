@@ -1,22 +1,26 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, Document, model } from "mongoose";
+
+import { DatabaseNames } from "../config";
+const { ContactCollection } = DatabaseNames;
 
 export interface IContactInfoData extends Document {
-    id: number;
     label: string;
     info: string;
+    link?: string;
     icon: string;
 }
 
 const ContactDataSchema: Schema = new Schema({
-    id: { type: Number, required: true },
     label: { type: String, required: true },
     info: { type: String, required: true },
+    link: { type: String },
     icon: { type: String, required: true },
 });
 
-const ContactDataModel = mongoose.model<IContactInfoData>(
-    "ContactData",
-    ContactDataSchema
+const ContactDataModel = model<IContactInfoData>(
+    ContactCollection,
+    ContactDataSchema,
+    ContactCollection
 );
 
 export default ContactDataModel;
