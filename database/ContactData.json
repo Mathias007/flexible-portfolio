@@ -1,0 +1,27 @@
+[
+    {
+        "label": "GitHub",
+        "info": "Mathias007",
+        "link": "https://github.com/Mathias007",
+        "icon": "github"
+    },
+    {
+        "label": "eMail",
+        "info": "matstawowski@gmail.com",
+        "link": "mailto:matstawowski@gmail.com",
+        "icon": "email"
+    },
+    {
+        "label": "LinkedIn",
+        "info": "Mateusz Stawowski",
+        "link": "https://linkedin.com/in/mateusz-stawowski",
+        "icon": "linkedin"
+    },
+    { "label": "Location", "info": "Silesia / Remote", "icon": "location" },
+    {
+        "label": "Website",
+        "info": "eGilda",
+        "link": "https://egildia.pl",
+        "icon": "globe"
+    }
+]
