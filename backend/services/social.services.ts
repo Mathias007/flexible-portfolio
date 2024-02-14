@@ -1,4 +1,6 @@
 import { SocialDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { SocialCollection } = DatabaseNames;
 
 class SocialService {
     async getSocialData() {
@@ -6,7 +8,7 @@ class SocialService {
             const socialData = await SocialDataModel.find({});
             return socialData;
         } catch (error) {
-            throw new Error("Failed to fetch social data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(SocialCollection));
         }
     }
 }

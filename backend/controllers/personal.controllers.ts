@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { PersonalService } from "../services";
 
+import { ServerStatuses, ServerMessages } from "../config";
+
 class PersonalController {
     private personalService: PersonalService;
 
@@ -16,7 +18,9 @@ class PersonalController {
             res.json(contactInfoData);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Internal server error" });
+            res.status(ServerStatuses.INTERNAL_ERROR).json({
+                message: ServerMessages.INTERNAL_ERROR,
+            });
         }
     };
 }

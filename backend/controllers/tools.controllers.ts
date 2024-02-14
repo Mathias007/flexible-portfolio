@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { ToolsService } from "../services";
 
+import { ServerStatuses, ServerMessages } from "../config";
+
 class ToolsController {
     private toolsService: ToolsService;
 
@@ -14,7 +16,9 @@ class ToolsController {
             res.json(toolsData);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Internal server error" });
+            res.status(ServerStatuses.INTERNAL_ERROR).json({
+                message: ServerMessages.INTERNAL_ERROR,
+            });
         }
     };
 }

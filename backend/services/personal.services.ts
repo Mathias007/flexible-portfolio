@@ -1,4 +1,6 @@
 import { PersonalDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { PersonalCollection } = DatabaseNames;
 
 class PersonalService {
     async getPersonalData() {
@@ -6,7 +8,7 @@ class PersonalService {
             const personalData = await PersonalDataModel.find({});
             return personalData;
         } catch (error) {
-            throw new Error("Failed to fetch personal data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(PersonalCollection));
         }
     }
 }

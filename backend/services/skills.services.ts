@@ -1,4 +1,6 @@
 import { SkillsDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { SkillsCollection } = DatabaseNames;
 
 class SkillsService {
     async getSkillsData() {
@@ -6,7 +8,7 @@ class SkillsService {
             const skillsData = await SkillsDataModel.find({});
             return skillsData;
         } catch (error) {
-            throw new Error("Failed to fetch skills data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(SkillsCollection));
         }
     }
 }

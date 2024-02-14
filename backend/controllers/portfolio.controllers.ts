@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { PortfolioService } from "../services";
 
+import { ServerStatuses, ServerMessages } from "../config";
+
 class PortfolioController {
     private portfolioService: PortfolioService;
 
@@ -15,7 +17,9 @@ class PortfolioController {
             res.json(portfolioData);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Internal server error" });
+            res.status(ServerStatuses.INTERNAL_ERROR).json({
+                message: ServerMessages.INTERNAL_ERROR,
+            });
         }
     };
 }

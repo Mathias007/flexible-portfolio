@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { SkillsService } from "../services";
 
+import { ServerStatuses, ServerMessages } from "../config";
+
 class SkillsController {
     private skillsService: SkillsService;
 
@@ -14,7 +16,9 @@ class SkillsController {
             res.json(skillsData);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Internal server error" });
+            res.status(ServerStatuses.INTERNAL_ERROR).json({
+                message: ServerMessages.INTERNAL_ERROR,
+            });
         }
     };
 }

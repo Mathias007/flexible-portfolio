@@ -19,6 +19,8 @@ import {
     TimelineService,
 } from "./services";
 
+import { ServerPaths } from "./config";
+
 const router = express.Router();
 
 const contactService = new ContactService();
@@ -37,12 +39,12 @@ const skillsController = new SkillsController(skillsService);
 const socialController = new SocialController(socialService);
 const timelineController = new TimelineController(timelineService);
 
-router.get("/contact", contactController.getContactInfoData);
-router.get("/personal", personalController.getPersonalData);
-router.get("/portfolio", portfolioController.getPortfolioProjectsData);
-router.get("/tools", toolsController.getServicesData);
-router.get("/skills", skillsController.getSkillsData);
-router.get("/social", socialController.getSocialMediata);
-router.get("/timeline", timelineController.getTimelineData);
+router.get(ServerPaths.CONTACT, contactController.getContactInfoData);
+router.get(ServerPaths.PERSONAL, personalController.getPersonalData);
+router.get(ServerPaths.PORTFOLIO, portfolioController.getPortfolioProjectsData);
+router.get(ServerPaths.TOOLS, toolsController.getServicesData);
+router.get(ServerPaths.SKILLS, skillsController.getSkillsData);
+router.get(ServerPaths.SOCIAL, socialController.getSocialMediata);
+router.get(ServerPaths.TIMELINE, timelineController.getTimelineData);
 
 export default router;
