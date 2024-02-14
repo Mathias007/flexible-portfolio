@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { TimelineService } from "../services";
 
+import { ServerStatuses, ServerMessages } from "../config";
+
 class TimelineController {
     private timelineService: TimelineService;
 
@@ -14,7 +16,9 @@ class TimelineController {
             res.json(timelineData);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: "Internal server error" });
+            res.status(ServerStatuses.INTERNAL_ERROR).json({
+                message: ServerMessages.INTERNAL_ERROR,
+            });
         }
     };
 }
