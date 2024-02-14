@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
+import { Schema, Document, model } from "mongoose";
 
-export interface ISocialData {
-    id: number;
+import { DatabaseNames } from "../config";
+const { SocialCollection } = DatabaseNames;
+
+export interface ISocialData extends Document {
     type: string;
     link: string;
 }
 
-const SocialDataSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
+const SocialDataSchema = new Schema({
     type: { type: String, required: true },
     link: { type: String, required: true },
 });
 
-const SocialDataModel = mongoose.model<ISocialData>(
-    "SocialData",
-    SocialDataSchema
+const SocialDataModel = model<ISocialData>(
+    SocialCollection,
+    SocialDataSchema,
+    SocialCollection
 );
 
 export default SocialDataModel;
