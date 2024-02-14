@@ -7,7 +7,7 @@ const PersonalInfoButtons: FC = () => {
                 Download CV
             </a>
             <a href="#contact" className="btn hire-me">
-                Hire Me
+                Contact Me
             </a>
         </div>
     );
