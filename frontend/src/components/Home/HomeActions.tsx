@@ -1,9 +1,10 @@
 import { FC } from "react";
+import { homeData } from "../../data";
 
 const HomeActions: FC = () => {
     return (
-        <a href="#contact" className="btn hire-me" data-testid="home-actions">
-            Hire Me
+        <a href="#about" className="btn hire-me" data-testid="home-actions">
+            {homeData.homeButtonLabel}
         </a>
     );
 };

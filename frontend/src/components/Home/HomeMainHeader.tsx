@@ -1,9 +1,10 @@
 import { FC } from "react";
+import { homeData } from "../../data";
 
 const HomeMainHeader: FC = () => {
     return (
         <h3 className="hello" data-testid="home-main-header">
-            Hello, my name is <span className="name">Mateusz Stawowski</span>
+            {homeData.homeHeaderText}<span className="name">{homeData.homeHeaderBold}</span>
         </h3>
     );
 };
