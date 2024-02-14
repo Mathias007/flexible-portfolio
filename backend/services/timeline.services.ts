@@ -1,4 +1,6 @@
 import { TimelineDataModel, TimelineModels } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { TimelineCollection } = DatabaseNames;
 
 class TimelineService {
     async getTimelineData() {
@@ -18,7 +20,7 @@ class TimelineService {
 
             return { educationTimelineData, experienceTimelineData };
         } catch (error) {
-            throw new Error("Failed to fetch timeline data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(TimelineCollection));
         }
     }
 }

@@ -1,4 +1,6 @@
 import { ContactDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { ContactCollection } = DatabaseNames;
 
 class ContactService {
     async getContactInfoData() {
@@ -6,7 +8,7 @@ class ContactService {
             const contactInfoData = await ContactDataModel.find({});
             return contactInfoData;
         } catch (error) {
-            throw new Error("Failed to fetch contact info data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(ContactCollection));
         }
     }
 }

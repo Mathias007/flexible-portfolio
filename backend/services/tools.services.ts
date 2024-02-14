@@ -1,4 +1,6 @@
 import { ToolsDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { ToolsCollection } = DatabaseNames;
 
 class ToolsService {
     async getToolsData() {
@@ -6,7 +8,7 @@ class ToolsService {
             const toolsData = await ToolsDataModel.find({});
             return toolsData;
         } catch (error) {
-            throw new Error("Failed to fetch tools data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(ToolsCollection));
         }
     }
 }

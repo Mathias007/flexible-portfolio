@@ -1,4 +1,6 @@
 import { PortfolioDataModel } from "../models";
+import { DatabaseNames, ServerMessages } from "../config";
+const { PortfolioCollection } = DatabaseNames;
 
 class PoerfolioService {
     async getPortfolioData() {
@@ -6,7 +8,7 @@ class PoerfolioService {
             const portfolioData = await PortfolioDataModel.find({});
             return portfolioData;
         } catch (error) {
-            throw new Error("Failed to fetch portfolio data");
+            throw new Error(ServerMessages.FAILED_TO_FETCH(PortfolioCollection));
         }
     }
 }
