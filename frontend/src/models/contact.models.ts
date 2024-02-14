@@ -1,6 +1,7 @@
 export interface IContactInfoData {
-    id: number;
+    _id: number;
     label: string;
     info: string;
+    link?: string;
     icon: string;
 }
