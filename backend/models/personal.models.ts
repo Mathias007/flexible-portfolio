@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
+import { Schema, Document, model } from "mongoose";
 
-export interface IPersonalData {
-    id: number;
+import { DatabaseNames } from "../config";
+const { PersonalCollection } = DatabaseNames;
+
+export interface IPersonalData extends Document {
     label: string;
     value: string;
 }
 
-const PersonalDataSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
+const PersonalDataSchema = new Schema({
     label: { type: String, required: true },
     value: { type: String, required: true },
 });
 
-const PersonalDataModel = mongoose.model<IPersonalData>(
-    "PersonalData",
-    PersonalDataSchema
+const PersonalDataModel = model<IPersonalData>(
+    PersonalCollection,
+    PersonalDataSchema,
+    PersonalCollection
 );
 
 export default PersonalDataModel;
