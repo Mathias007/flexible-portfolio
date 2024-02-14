@@ -85,7 +85,7 @@ const mockEducationTimelineData: TimelineModels.ITimelineData[] = [
         icon: "calendar",
         date: "2013 - 2015",
     },
-];
+] as TimelineModels.ITimelineData[];
 
 const mockExperienceTimelineData: TimelineModels.ITimelineData[] = [
     {
@@ -115,7 +115,7 @@ const mockExperienceTimelineData: TimelineModels.ITimelineData[] = [
         icon: "calendar",
         date: "2013 - 2015",
     },
-];
+] as TimelineModels.ITimelineData[];
 
 export const mockTimelineSortedData: TimelineModels.ITimelineSortedData = {
     educationTimelineData: mockEducationTimelineData,

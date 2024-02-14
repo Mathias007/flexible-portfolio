@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
+import { Schema, Document, model } from "mongoose";
 
-export interface IPortfolioData {
-    id: number;
+import { DatabaseNames } from "../config";
+const { PortfolioCollection } = DatabaseNames;
+
+export interface IPortfolioData extends Document {
     logo: string;
     description: string;
 }
 
-const PortfolioDataSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
+const PortfolioDataSchema = new Schema({
     logo: { type: String, required: true },
     description: { type: String, required: true },
 });
 
-const PortfolioDataModel = mongoose.model<IPortfolioData>(
-    "PortfolioData",
-    PortfolioDataSchema
+const PortfolioDataModel = model<IPortfolioData>(
+    PortfolioCollection,
+    PortfolioDataSchema,
+    PortfolioCollection
 );
 
 export default PortfolioDataModel;

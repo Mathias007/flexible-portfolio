@@ -1,19 +1,13 @@
 import { FC } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { homeData } from "../../data";
 
 const HomeSubHeader: FC = () => {
     return (
         <h3 className="my-proffesion" data-testid="home-sub-header">
-            I'm a{" "}
+            {homeData.homeSubHeaderText}
             <TypeAnimation
-                sequence={[
-                    "Web Developer",
-                    1000,
-                    "Software Engineer",
-                    1000,
-                    "Fullstack JavaScript Developer",
-                    1000,
-                ]}
+                sequence={homeData.homeAnimationTextData}
                 speed={50}
                 repeat={Infinity}
                 className="proffesion typing"

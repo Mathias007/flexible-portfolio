@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Information Technology Engineer",
+        "type": "education",
+        "description": "WSB Merito - Programming specialization",
+        "icon": "school",
+        "date": "2021 - 2025"
+    },
+    {
+        "title": "Cybersecurity",
+        "type": "education",
+        "description": "Postdegree Studies",
+        "icon": "receipt-long",
+        "date": "2022 - 2023"
+    },
+    {
+        "title": "Web and Mobile Applications",
+        "type": "education",
+        "description": "Postdegree Studies",
+        "icon": "receipt-long",
+        "date": "2021 - 2022"
+    },
+    {
+        "title": "Bachelor of Administration",
+        "type": "education",
+        "description": "Jagiellonian University in Kraków",
+        "icon": "school",
+        "date": "2018 - 2020"
+    },
+    {
+        "title": "Master of Law",
+        "type": "education",
+        "description": "Jagiellonian University in Kraków",
+        "icon": "school",
+        "date": "2014 - 2019"
+    },
+    {
+        "title": "Fullstack Software Engineer",
+        "type": "experience",
+        "description": "Sky Vision in Gliwice",
+        "icon": "work",
+        "date": "2022 - now"
+    },
+    {
+        "title": "Assistant of Judge",
+        "type": "experience",
+        "description": "Provincial Administrative Court in Gliwice",
+        "icon": "gavel",
+        "date": "2020 - 2022"
+    },
+    {
+        "title": "Web Developer",
+        "type": "experience",
+        "description": "Freelance development for the entertainment and the legal services markets",
+        "icon": "webhook",
+        "date": "2017 - 2020"
+    },
+    {
+        "title": "Webmaster and Chief Editor",
+        "type": "experience",
+        "description": "eGildia Graczy - egildia.pl",
+        "icon": "globe",
+        "date": "2017 - now"
+    },
+    {
+        "title": "Administrator",
+        "type": "experience",
+        "description": "Tajemnice Antagarichu - herosy3.pun.pl",
+        "icon": "globe",
+        "date": "2006 - 2018"
+    }
+]
