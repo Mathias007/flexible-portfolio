@@ -8,14 +8,19 @@ import {
 } from "../Contact";
 
 import { contactModels } from "../../models";
+import { contactData } from "../../data";
 
 const Contact: FC = () => {
-    const [contactInfoData, setSocialData] = useState<contactModels.IContactInfoData[]>([]);
+    const [contactInfoData, setSocialData] = useState<
+        contactModels.IContactInfoData[]
+    >([]);
 
     useEffect(() => {
         const fetchContactInfoData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/api/contact");
+                const response = await fetch(
+                    "http://localhost:3000/api/contact"
+                );
                 if (!response.ok) {
                     throw new Error("Failed to fetch contact info data");
                 }
@@ -38,13 +43,13 @@ const Contact: FC = () => {
             <div className="container">
                 <ContactTitle />
                 <ContactSectionHeading
-                    title="Have You Any Questions?"
-                    subtitle="I'M AT YOUR SERVICES"
+                    title={contactData.contactLinksTitle}
+                    subtitle={contactData.contactLinksSubtitle}
                 />
                 <ContactInfo contactInfoData={contactInfoData} />
                 <ContactSectionHeading
-                    title="SEND ME AN EMAIL"
-                    subtitle="I'M OPEN TO MESSAGES"
+                    title={contactData.contactFormTitle}
+                    subtitle={contactData.contactFormSubtitle}
                 />
                 <ContactForm />
             </div>

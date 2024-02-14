@@ -30,6 +30,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LockIcon from "@mui/icons-material/Lock";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import GavelIcon from "@mui/icons-material/Gavel";
+import WebHookIcon from "@mui/icons-material/Webhook";
+import SchoolIcon from "@mui/icons-material/School";
 
 interface IconProps {
     type: string;
@@ -52,6 +56,7 @@ const IconsMap: { [key: string]: React.ElementType } = {
     phone: PhoneIcon,
     location: LocationIcon,
     email: EmailIcon,
+    gavel: GavelIcon,
     globe: GlobeIcon,
     moon: DarkModeIcon,
     sun: LightModeIcon,
@@ -67,6 +72,9 @@ const IconsMap: { [key: string]: React.ElementType } = {
     "alter-email": AlternateEmailIcon,
     lock: LockIcon,
     perm: PermIdentityIcon,
+    "receipt-long": ReceiptLongIcon,
+    webhook: WebHookIcon,
+    school: SchoolIcon,
 };
 
 const Icon: React.FC<IconProps> = ({ type, className }) => {

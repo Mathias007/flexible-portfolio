@@ -12,9 +12,10 @@ const ContactInfo: FC<IContactInfoPros> = ({ contactInfoData }) => {
             {contactInfoData.map((contact) => {
                 return (
                     <ContactInfoItem
-                        key={contact.id}
+                        key={contact._id}
                         label={contact.label}
                         info={contact.info}
+                        link={contact.link}
                         icon={contact.icon}
                     />
                 );

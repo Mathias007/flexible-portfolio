@@ -25,9 +25,10 @@ const AboutTimeline: FC<IAboutTimelineProps> = ({
                         {data.map((timeline: timelineModels.ITimelineData) => {
                             return (
                                 <TimelineItem
-                                    key={timeline.id}
-                                    id={timeline.id}
+                                    key={timeline._id}
+                                    _id={timeline._id}
                                     title={timeline.title}
+                                    type={timeline.type}
                                     description={timeline.description}
                                     icon={timeline.icon}
                                     date={timeline.date}

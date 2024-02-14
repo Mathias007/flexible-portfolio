@@ -1,20 +1,22 @@
-import mongoose from "mongoose";
+import { Schema, Document, model } from "mongoose";
 
-export interface ISkillsData {
-    id: number;
+import { DatabaseNames } from "../config";
+const { SkillsCollection } = DatabaseNames;
+
+export interface ISkillsData extends Document {
     skill: string;
     value: number;
 }
 
-const SkillsDataSchema = new mongoose.Schema({
-    id: { type: Number, required: true },
+const SkillsDataSchema = new Schema({
     skill: { type: String, required: true },
     value: { type: Number, required: true },
 });
 
-const SkillsDataModel = mongoose.model<ISkillsData>(
-    "SkillsData",
-    SkillsDataSchema
+const SkillsDataModel = model<ISkillsData>(
+    SkillsCollection,
+    SkillsDataSchema,
+    SkillsCollection
 );
 
 export default SkillsDataModel;

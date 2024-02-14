@@ -5,12 +5,13 @@ import { contactModels } from "../../../models";
 
 const mockContactInfoData: contactModels.IContactInfoData[] = [
     {
-        id: 1,
+        _id: 1,
         label: "Address",
         info: "123 Main Street, City, Country",
+        link: "https://test.pl",
         icon: "location",
     },
-    { id: 2, label: "Email", info: "example@example.com", icon: "email" },
+    { _id: 2, label: "Email", info: "example@example.com", icon: "email" },
 ];
 
 test("renders the contact section correctly", () => {
