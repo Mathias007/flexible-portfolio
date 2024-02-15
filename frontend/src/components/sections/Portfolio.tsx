@@ -8,18 +8,22 @@ import {
 
 import { portfolioModels } from "../../models";
 
+import { ConfigVariables, ServerPaths } from "../../config";
+const { SERVER_URL } = ConfigVariables;
+const { API, PORTFOLIO } = ServerPaths;
+
 const Portfolio: FC = () => {
-    const [portfolioData, setSocialData] = useState<portfolioModels.IPortfolioData[]>([]);
+    const [portfolioData, setPortfolioData] = useState<portfolioModels.IPortfolioData[]>([]);
 
     useEffect(() => {
         const fetchPortfolioData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/api/portfolio");
+                const response = await fetch(`${SERVER_URL}${API}${PORTFOLIO}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch portfolio data");
                 }
                 const data = await response.json();
-                setSocialData(data);
+                setPortfolioData(data);
             } catch (error) {
                 console.error("Error fetching portfolio data:", error);
             }

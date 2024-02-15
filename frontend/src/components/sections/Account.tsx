@@ -4,13 +4,17 @@ import { AccountForm, AccountIntroduction } from "../Account";
 
 import { socialModels } from "../../models";
 
+import { ConfigVariables, ServerPaths } from "../../config";
+const { SERVER_URL } = ConfigVariables;
+const { API, SOCIAL } = ServerPaths;
+
 const Account: FC = () => {
     const [socialData, setSocialData] = useState<socialModels.ISocialData[]>([]);
 
     useEffect(() => {
         const fetchSocialData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/api/social");
+                const response = await fetch(`${SERVER_URL}${API}${SOCIAL}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch social data");
                 }
