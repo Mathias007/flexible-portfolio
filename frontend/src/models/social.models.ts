@@ -1,5 +1,5 @@
 export interface ISocialData {
-    id: number;
+    _id: number;
     type: string;
     link: string;
 }

@@ -66,6 +66,7 @@ const IconsMap: { [key: string]: React.ElementType } = {
     facebook: FacebookIcon,
     twitter: TwitterIcon,
     instagram: InstagramIcon,
+    egildia: GlobeIcon,
     youtube: YouTubeIcon,
     linkedin: LinkedInIcon,
     github: GitHubIcon,
