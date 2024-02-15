@@ -23,8 +23,8 @@ const AccountIntroduction: FC<IAccountIntroductionProps> = ({ socialData }) => {
                 {socialData.map((social: socialModels.ISocialData) => {
                     return (
                         <AccountSocialButton
-                            key={social.id}
-                            id={social.id}
+                            key={social._id}
+                            _id={social._id}
                             type={social.type}
                             link={social.link}
                         />

@@ -10,22 +10,24 @@ import {
 import { contactModels } from "../../models";
 import { contactData } from "../../data";
 
+import { ConfigVariables, ServerPaths } from "../../config";
+const { SERVER_URL } = ConfigVariables;
+const { API, CONTACT } = ServerPaths;
+
 const Contact: FC = () => {
-    const [contactInfoData, setSocialData] = useState<
+    const [contactInfoData, setContactInfoData] = useState<
         contactModels.IContactInfoData[]
     >([]);
 
     useEffect(() => {
         const fetchContactInfoData = async () => {
             try {
-                const response = await fetch(
-                    "http://localhost:3000/api/contact"
-                );
+                const response = await fetch(`${SERVER_URL}${API}${CONTACT}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch contact info data");
                 }
                 const data = await response.json();
-                setSocialData(data);
+                setContactInfoData(data);
             } catch (error) {
                 console.error("Error fetching contact info data:", error);
             }

@@ -10,6 +10,10 @@ import {
 
 import { timelineModels, personalModels, skillsModels } from "../../models";
 
+import { ConfigVariables, ServerPaths } from "../../config";
+const { SERVER_URL } = ConfigVariables;
+const { API, TIMELINE, PERSONAL, SKILLS } = ServerPaths;
+
 const About: FC = () => {
     const [educationTimelineData, setEducationTimelineData] = useState<timelineModels.ITimelineData[]>([]);
     const [experienceTimelineData, setExperienceTimelineData] = useState<timelineModels.ITimelineData[]>([]);
@@ -19,7 +23,7 @@ const About: FC = () => {
     useEffect(() => {
         const fetchTimelineData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/timeline');
+                const response = await fetch(`${SERVER_URL}${API}${TIMELINE}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch timeline data');
                 }
@@ -34,7 +38,7 @@ const About: FC = () => {
 
         const fetchPersonalData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/personal');
+                const response = await fetch(`${SERVER_URL}${API}${PERSONAL}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch personal data');
                 }
@@ -48,7 +52,7 @@ const About: FC = () => {
 
         const fetchSkillsData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/skills');
+                const response = await fetch(`${SERVER_URL}${API}${SKILLS}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch skills data');
                 }
