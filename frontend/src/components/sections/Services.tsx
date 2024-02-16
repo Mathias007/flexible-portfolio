@@ -1,9 +1,11 @@
 import { FC, useEffect, useState } from "react";
 
-import { ServicesTitle, ServicesContent } from "../Services";
+import { ServicesContent } from "../Services";
 import { toolsModels } from "../../models";
 
 import { ConfigVariables, ServerPaths } from "../../config";
+import { Title } from "../general";
+import { headersData } from "../../data";
 const { SERVER_URL } = ConfigVariables;
 const { API, TOOLS } = ServerPaths;
 
@@ -30,7 +32,7 @@ const Services: FC = () => {
     return (
         <section className="service section" id="services">
             <div className="container">
-                <ServicesTitle />
+                <Title title={headersData.servicesTitle} />
                 <ServicesContent services={servicesData} />
             </div>
         </section>

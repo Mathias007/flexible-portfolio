@@ -1,28 +1,30 @@
 import { render, screen } from "@testing-library/react";
-import { AboutTimeline } from "..";
+import { TimelineSection } from "..";
 
 import { timelineModels } from "../../../models";
 
 const mockTimelineData: timelineModels.ITimelineData[] = [
     {
-        id: 1,
+        _id: 1,
         title: "Test Title 1",
         description: "Test Description 1",
+        type: "test",
         icon: "computer",
         date: "2022-01-01",
     },
     {
-        id: 2,
+        _id: 2,
         title: "Test Title 2",
         description: "Test Description 2",
+        type: "test",
         icon: "smartphone",
         date: "2022-02-02",
     },
 ];
 
-test("renders the AboutTimeline component correctly", () => {
+test("renders the TimelineSection component correctly", () => {
     render(
-        <AboutTimeline
+        <TimelineSection
             header="Test Header"
             data={mockTimelineData}
             className="test-timeline"

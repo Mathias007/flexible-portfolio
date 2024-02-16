@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 
 import {
-    PortfolioTitle,
     PortfolioHeading,
     PortfolioContent,
 } from "../Portfolio";
@@ -9,6 +8,9 @@ import {
 import { portfolioModels } from "../../models";
 
 import { ConfigVariables, ServerPaths } from "../../config";
+import { Title } from "../general";
+import { headersData } from "../../data";
+
 const { SERVER_URL } = ConfigVariables;
 const { API, PORTFOLIO } = ServerPaths;
 
@@ -39,7 +41,7 @@ const Portfolio: FC = () => {
             data-testid="portfolio-section"
         >
             <div className="container">
-                <PortfolioTitle />
+                <Title title={headersData.portfolioTitle} />
                 <PortfolioHeading />
                 <PortfolioContent portfolioData={portfolioData} />
             </div>

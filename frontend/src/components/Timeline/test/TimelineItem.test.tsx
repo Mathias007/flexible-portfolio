@@ -4,9 +4,10 @@ import { TimelineItem } from "..";
 import { timelineModels } from "../../../models";
 
 const mockTimelineData: timelineModels.ITimelineData = {
-    id: 1,
+    _id: 1,
     title: "Test Title",
     description: "Test Description",
+    type: "test",
     icon: "computer",
     date: "2022-01-01",
 };
@@ -14,8 +15,9 @@ const mockTimelineData: timelineModels.ITimelineData = {
 test("renders the TimelineItem component correctly", () => {
     render(
         <TimelineItem
-            id={mockTimelineData.id}
+            _id={mockTimelineData._id}
             title={mockTimelineData.title}
+            type={mockTimelineData.type}
             description={mockTimelineData.description}
             icon={mockTimelineData.icon}
             date={mockTimelineData.date}
