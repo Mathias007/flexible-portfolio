@@ -4,13 +4,13 @@ import {
     ContactSectionHeading,
     ContactInfo,
     ContactForm,
-    ContactTitle,
 } from "../Contact";
 
 import { contactModels } from "../../models";
-import { contactData } from "../../data";
+import { contactData, headersData } from "../../data";
 
 import { ConfigVariables, ServerPaths } from "../../config";
+import { Title } from "../general";
 const { SERVER_URL } = ConfigVariables;
 const { API, CONTACT } = ServerPaths;
 
@@ -43,7 +43,7 @@ const Contact: FC = () => {
             data-testid="contact-section"
         >
             <div className="container">
-                <ContactTitle />
+                <Title title={headersData.contactTitle} />
                 <ContactSectionHeading
                     title={contactData.contactLinksTitle}
                     subtitle={contactData.contactLinksSubtitle}

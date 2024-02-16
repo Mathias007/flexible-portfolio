@@ -3,7 +3,9 @@ import { FC, useEffect, useState } from "react";
 import { timelineModels } from "../../models";
 import { ConfigVariables, ServerPaths } from "../../config";
 
-import { TimelineSection, TimelineTitle } from "../Timeline";
+import { TimelineSection } from "../Timeline";
+import { Title } from "../general";
+import { headersData } from "../../data";
 
 const { SERVER_URL } = ConfigVariables;
 const { API, TIMELINE } = ServerPaths;
@@ -38,7 +40,7 @@ const Timeline: FC = () => {
             data-testid="about-section"
         >
             <div className="container">
-                <TimelineTitle />
+                <Title title={headersData.timelineTitle} />
                 <div className="row">
                     <div className="about-content padd-15">
                         <div className="row">
