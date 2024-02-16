@@ -18,9 +18,10 @@ const AboutPersonalInfo: FC<IAboutPersonalInfo> = ({ personalData }) => {
                 {personalData.map((info) => {
                     return (
                         <PersonalInfoItem
-                            key={info.id}
+                            key={info._id}
                             label={info.label}
                             value={info.value}
+                            link={info.link}
                         />
                     );
                 })}
