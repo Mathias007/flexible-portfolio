@@ -16,6 +16,7 @@ const ServicesContent: FC<IServicesContentProps> = ({ services }) => {
                     title={service.title}
                     description={service.description}
                     icon={service.icon}
+                    technologies={service.technologies}
                 />
             ))}
         </div>
