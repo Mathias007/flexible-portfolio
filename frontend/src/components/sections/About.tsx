@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 
 import {
-    AboutTitle,
     AboutDescription,
     AboutPersonalInfo,
     AboutSkills,
@@ -10,6 +9,8 @@ import {
 import { personalModels, skillsModels } from "../../models";
 
 import { ConfigVariables, ServerPaths } from "../../config";
+import { headersData } from "../../data";
+import { Title } from "../general";
 const { SERVER_URL } = ConfigVariables;
 const { API, PERSONAL, SKILLS } = ServerPaths;
 
@@ -57,7 +58,7 @@ const About: FC = () => {
             data-testid="about-section"
         >
             <div className="container">
-                <AboutTitle />
+                <Title title={headersData.aboutTitle} />
                 <div className="row">
                     <div className="about-content padd-15">
                         <AboutDescription />
