@@ -1,0 +1,24 @@
+[
+    { "label": "Birthday", "value": "24 of May 1995" },
+    { "label": "First project", "value": "2006" },
+    { "label": "Experience", "value": "since 2017" },
+    {
+        "label": "Website",
+        "value": "www.egildia.pl",
+        "link": "https://egildia.pl"
+    },
+    {
+        "label": "Email",
+        "value": "matstawowski@gmail.com",
+        "link": "mailto:matstawowski@gmail.com"
+    },
+    {
+        "label": "GitHub",
+        "value": "Mathias007",
+        "link": "https://github.com/Mathias007"
+    },
+    { "label": "Position", "value": "Software Engineer" },
+    { "label": "Degree", "value": "IT Engineer, Master of Law" },
+    { "label": "specialization", "value": "Fullstack (Web Dev)" },
+    { "label": "Area", "value": "Silesia, Lesser Poland, Remote" }
+]

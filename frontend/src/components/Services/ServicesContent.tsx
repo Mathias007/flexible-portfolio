@@ -12,10 +12,11 @@ const ServicesContent: FC<IServicesContentProps> = ({ services }) => {
         <div className="row" data-testid="services-content">
             {services.map((service) => (
                 <ServicesItem
-                    key={service.id}
+                    key={service._id}
                     title={service.title}
                     description={service.description}
                     icon={service.icon}
+                    technologies={service.technologies}
                 />
             ))}
         </div>

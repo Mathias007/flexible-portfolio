@@ -1,5 +1,6 @@
 export interface IPersonalData {
-    id: number;
+    _id: number;
     label: string;
     value: string;
+    link?: string;
 }

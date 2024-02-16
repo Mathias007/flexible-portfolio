@@ -9,16 +9,24 @@ interface IAboutSkills {
 }
 
 const AboutSkills: FC<IAboutSkills> = ({ skillsData }) => {
+    const actualYear = new Date().getFullYear();
+    const maxValue = skillsData.reduce(function (maxValue, currentValue) {
+        return Math.max(maxValue, actualYear - currentValue.value);
+    }, -Infinity);
+
     return (
         <div className="skills padd-15" data-testid="about-skills">
             <div className="row">
                 {skillsData.map((data: skillsModels.ISkillsData) => {
+                    const experienceInYears = actualYear - data.value;
+
                     return (
                         <SkillsItem
-                            key={data.id}
-                            id={data.id}
+                            key={data._id}
+                            _id={data._id}
                             skill={data.skill}
-                            value={data.value}
+                            value={experienceInYears}
+                            maxValue={maxValue}
                         />
                     );
                 })}

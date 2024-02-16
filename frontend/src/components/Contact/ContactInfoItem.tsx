@@ -15,7 +15,7 @@ const ContactInfoItem: FC<IContactInfoItemProps> = ({
     icon,
 }) => {
     return (
-        <a href={link || "#"} target="_blank">
+        <a href={link || "#contact"} target={link ? "_blank" : ""}>
             <div
                 className="contact-info-item padd-15"
                 data-testid="contact-info-item"

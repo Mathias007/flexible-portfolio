@@ -34,6 +34,13 @@ import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import GavelIcon from "@mui/icons-material/Gavel";
 import WebHookIcon from "@mui/icons-material/Webhook";
 import SchoolIcon from "@mui/icons-material/School";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import FrontendIcon from "@mui/icons-material/Vrpano";
+import StorageIcon from "@mui/icons-material/Storage";
+import SettingsIcon from "@mui/icons-material/Settings";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import SpeedIcon from "@mui/icons-material/Speed";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 
 interface IconProps {
     type: string;
@@ -76,6 +83,13 @@ const IconsMap: { [key: string]: React.ElementType } = {
     "receipt-long": ReceiptLongIcon,
     webhook: WebHookIcon,
     school: SchoolIcon,
+    timeline: TimelineIcon,
+    vrpano: FrontendIcon,
+    "library-books": LibraryBooksIcon,
+    speed: SpeedIcon,
+    terminal: TerminalIcon,
+    settings: SettingsIcon,
+    storage: StorageIcon,
 };
 
 const Icon: React.FC<IconProps> = ({ type, className }) => {
