@@ -1,5 +1,9 @@
+export interface ISkillsItemData extends ISkillsData {
+    maxValue: number;
+}
+
 export interface ISkillsData {
-    id: number;
+    _id: number;
     skill: string;
     value: number;
 }

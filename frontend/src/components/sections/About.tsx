@@ -1,41 +1,24 @@
 import { FC, useEffect, useState } from "react";
 
 import {
-    AboutTitle,
     AboutDescription,
     AboutPersonalInfo,
     AboutSkills,
-    AboutTimeline,
 } from "../About";
 
-import { timelineModels, personalModels, skillsModels } from "../../models";
+import { personalModels, skillsModels } from "../../models";
 
 import { ConfigVariables, ServerPaths } from "../../config";
+import { headersData } from "../../data";
+import { Title } from "../general";
 const { SERVER_URL } = ConfigVariables;
-const { API, TIMELINE, PERSONAL, SKILLS } = ServerPaths;
+const { API, PERSONAL, SKILLS } = ServerPaths;
 
 const About: FC = () => {
-    const [educationTimelineData, setEducationTimelineData] = useState<timelineModels.ITimelineData[]>([]);
-    const [experienceTimelineData, setExperienceTimelineData] = useState<timelineModels.ITimelineData[]>([]);
     const [personalData, setPersonalData] = useState<personalModels.IPersonalData[]>([]);
     const [skillsData, setSkillsData] = useState<skillsModels.ISkillsData[]>([]);
 
     useEffect(() => {
-        const fetchTimelineData = async () => {
-            try {
-                const response = await fetch(`${SERVER_URL}${API}${TIMELINE}`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch timeline data');
-                }
-                const data = await response.json();
-                setEducationTimelineData(data.educationTimelineData);
-                setExperienceTimelineData(data.experienceTimelineData);
-
-            } catch (error) {
-                console.error('Error fetching timeline data:', error);
-            }
-        };
-
         const fetchPersonalData = async () => {
             try {
                 const response = await fetch(`${SERVER_URL}${API}${PERSONAL}`);
@@ -64,7 +47,6 @@ const About: FC = () => {
             }
         };
 
-        fetchTimelineData();
         fetchPersonalData();
         fetchSkillsData();
     }, []); 
@@ -76,25 +58,13 @@ const About: FC = () => {
             data-testid="about-section"
         >
             <div className="container">
-                <AboutTitle />
+                <Title title={headersData.aboutTitle} />
                 <div className="row">
                     <div className="about-content padd-15">
                         <AboutDescription />
                         <div className="row">
                             <AboutPersonalInfo personalData={personalData} />
                             <AboutSkills skillsData={skillsData} />
-                        </div>
-                        <div className="row">
-                            <AboutTimeline
-                                header="Education"
-                                data={educationTimelineData}
-                                className="education"
-                            />
-                            <AboutTimeline
-                                header="Experience"
-                                data={experienceTimelineData}
-                                className="experience"
-                            />
                         </div>
                     </div>
                 </div>

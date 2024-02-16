@@ -1,0 +1,123 @@
+[
+    {
+        "title": "Frontend",
+        "description": "Dedicated to creating captivating user interfaces that enhance user experience and engagement.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "Sass",
+            "Less",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "React Native",
+            "Vue"
+        ],
+        "icon": "vrpano"
+    },
+    {
+        "title": "Backend",
+        "description": "Proficient in developing robust server-side solutions to power data processing and application logic.",
+        "technologies": [
+            "JavaScript",
+            "TypeScript",
+            "Node",
+            "Express",
+            "Nest",
+            "C#",
+            ".NET",
+            "Python",
+            "PHP"
+        ],
+        "icon": "computer"
+    },
+    {
+        "title": "Databases",
+        "description": "Experienced in managing diverse data storage solutions to optimize backend operations.",
+        "technologies": [
+            "SQL",
+            "MySQL",
+            "Postgres",
+            "MongoDB",
+            "Prisma",
+            "Sequelize",
+            "Mongoose",
+            "GraphQL"
+        ],
+        "icon": "storage"
+    },
+    {
+        "title": "Software Architecture",
+        "description": "Skilled in designing scalable and resilient software systems tailored to meet business requirements.",
+        "technologies": [
+            "UML",
+            "Cybersecurity",
+            "Microservices",
+            "Project Patterns",
+            "RESTful",
+            "Modularity",
+            "Scalability",
+            "AWS Cloud"
+        ],
+        "icon": "settings"
+    },
+    {
+        "title": "Operation Systems & Computer Networks",
+        "description": "Experienced in managing system operations and network configurations to support seamless application deployment.",
+        "technologies": [
+            "PowerShell",
+            "Bash",
+            "Automation",
+            "Virtualization",
+            "Docker",
+            "HTTP(S)",
+            "Apache",
+            "NGINX",
+            "LXC"
+        ],
+        "icon": "terminal"
+    },
+    {
+        "title": "Testing",
+        "description": "Detail-oriented quality assurance specialist ensuring software reliability through rigorous testing practices.",
+        "technologies": [
+            "Manual",
+            "Unit",
+            "Integration",
+            "Functional",
+            "E2E",
+            "JEST",
+            "Cypress",
+            "TDD"
+        ],
+        "icon": "speed"
+    },
+    {
+        "title": "Documentation",
+        "description": "Experienced technical writer adept at creating clear and concise project documentation for effective collaboration.",
+        "technologies": [
+            "JIRA",
+            "Confluence",
+            "JsDocs",
+            "Swagger",
+            "Technical writing",
+            "Personal guides"
+        ],
+        "icon": "library-books"
+    },
+    {
+        "title": "Design",
+        "description": "Creative design enthusiast crafting intuitive and visually appealing user interfaces for exceptional user experiences.",
+        "technologies": [
+            "SVG",
+            "GSAP",
+            "GIMP",
+            "Figma",
+            "RWD",
+            "Modern patterns",
+            "UX",
+            "UI"
+        ],
+        "icon": "palette"
+    }
+]

@@ -2,12 +2,13 @@ import { useState } from "react";
 
 import {
     About,
-    Account,
+    // Account,
     Aside,
     Contact,
     Home,
-    Portfolio,
+    // Portfolio,
     Services,
+    Timeline
 } from "./components/sections";
 
 import { StyleSwitcher } from "./components/general";
@@ -30,10 +31,11 @@ function App(): JSX.Element {
                 <div className="main-content">
                     <Home />
                     <About />
+                    <Timeline />
                     <Services />
-                    <Portfolio />
+                    {/* <Portfolio /> */}
                     <Contact />
-                    <Account />
+                    {/* <Account /> */}
                 </div>
             </div>
             <StyleSwitcher
