@@ -1,0 +1,7 @@
+[
+    { "skill": "JavaScript", "value": 2017 },
+    { "skill": "React", "value": 2018 },
+    { "skill": "Node", "value": 2019 },
+    { "skill": "MongoDB", "value": 2019 },
+    { "skill": "Docker", "value": 2020 }
+]

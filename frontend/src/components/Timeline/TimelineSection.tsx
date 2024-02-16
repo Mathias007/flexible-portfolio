@@ -9,7 +9,7 @@ interface IAboutTimelineProps {
     className: string;
 }
 
-const AboutTimeline: FC<IAboutTimelineProps> = ({
+const TimelineSection: FC<IAboutTimelineProps> = ({
     header,
     data,
     className,
@@ -42,4 +42,4 @@ const AboutTimeline: FC<IAboutTimelineProps> = ({
     );
 };
 
-export default AboutTimeline;
+export default TimelineSection;
