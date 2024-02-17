@@ -1,5 +1,5 @@
 export interface IToolsData {
-    id: number;
+    _id: number;
     title: string;
     description: string;
     technologies: string[];
