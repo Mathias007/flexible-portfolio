@@ -6,7 +6,7 @@ import { vi } from "vitest";
 const mockNavigationItem = {
     id: 1,
     label: "Home",
-    link: "#home",
+    link: "home",
     icon: "home",
     isActive: false,
     onItemClick: vi.fn()

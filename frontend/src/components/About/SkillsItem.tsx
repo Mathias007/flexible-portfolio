@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { skillsModels } from "../../models";
+import { aboutData } from "../../data";
 
 const SkillsItem: FC<skillsModels.ISkillsItemData> = ({
     skill,
@@ -16,7 +17,7 @@ const SkillsItem: FC<skillsModels.ISkillsItemData> = ({
                     className="progress-in"
                     style={{ width: `${valuePercentage}%` }}
                 ></div>
-                <div className="skill-percent">{value} years</div>
+                <div className="skill-percent">{value} {aboutData.skillsUnit}</div>
             </div>
         </div>
     );

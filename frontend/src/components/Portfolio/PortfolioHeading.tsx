@@ -1,10 +1,11 @@
 import { FC } from "react";
+import { portfolioData } from "../../data";
 
 const PortfolioHeading: FC = () => {
     return (
         <div className="row" data-testid="portfolio-heading">
             <div className="portfolio-heading padd-15">
-                <h2>My Last Projects:</h2>
+                <h2>{portfolioData.portfolioProjectsHeading}</h2>
             </div>
         </div>
     );

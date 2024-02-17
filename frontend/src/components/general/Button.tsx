@@ -1,7 +1,17 @@
 import { FC } from "react";
 
-const Button: FC = () => {
-    return <div>Button</div>;
+interface IButton {
+    type: "submit" | "reset" | "button";
+    label: string;
+    className: string;
+}
+
+const Button: FC<IButton> = ({ type, label, className }) => {
+    return (
+        <button type={type} className={className}>
+            {label}
+        </button>
+    );
 };
 
 export default Button;

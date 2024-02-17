@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
+
 import { Icon } from "../general";
 
 interface IContactInfoItemProps {
@@ -15,7 +17,7 @@ const ContactInfoItem: FC<IContactInfoItemProps> = ({
     icon,
 }) => {
     return (
-        <a href={link || "#contact"} target={link ? "_blank" : ""}>
+        <Link to={link || ""} target={link ? "_blank" : ""}>
             <div
                 className="contact-info-item padd-15"
                 data-testid="contact-info-item"
@@ -26,7 +28,7 @@ const ContactInfoItem: FC<IContactInfoItemProps> = ({
                 <h4>{label}</h4>
                 <p>{info}</p>
             </div>
-        </a>
+        </Link>
     );
 };
 

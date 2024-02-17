@@ -1,13 +1,14 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import { Icon } from "../general";
 import { socialModels } from "../../models";
 
 const AccountSocialButton: FC<socialModels.ISocialData> = ({ type, link }) => {
     return (
-        <a href={link} data-testid="account-social-button">
+        <Link to={link} target="_blank" data-testid="account-social-button">
             <Icon type={type} className="social-media-icon" />
-        </a>
+        </Link>
     );
 };
 

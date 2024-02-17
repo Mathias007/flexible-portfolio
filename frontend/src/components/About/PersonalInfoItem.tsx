@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface IPersonalInfoItemProps {
     label: string;
@@ -18,9 +19,9 @@ const PersonalInfoItem: FC<IPersonalInfoItemProps> = ({
             <p>
                 {label}:
                 {link ? (
-                    <a href={link} target="_blank">
+                    <Link to={link} target="_blank">
                         <PersonalValue />
-                    </a>
+                    </Link>
                 ) : (
                     <PersonalValue />
                 )}
