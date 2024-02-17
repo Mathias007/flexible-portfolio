@@ -7,7 +7,8 @@ const aboutData = {
         "I constantly expand my IT knowledge during studies, courses and lectures.",
     ],
     aboutPrimaryButtonLabel: "Download CV",
-    aboutSecondaryButtonLabel: "Contact Me"
+    aboutSecondaryButtonLabel: "Contact Me",
+    skillsUnit: "years",
 };
 
 export default aboutData;
