@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { Navigation } from "..";
 
 const mockNavigationData = [
-    { id: 1, label: "Home", link: "#home", icon: "home" },
-    { id: 2, label: "About", link: "#about", icon: "person" },
+    { id: 1, label: "Home", link: "home", icon: "home" },
+    { id: 2, label: "About", link: "about", icon: "person" },
 ];
 
 test("renders Navigation component correctly", () => {
