@@ -5,20 +5,23 @@ import { toolsModels } from "../../../models";
 
 const sampleServicesData: toolsModels.IToolsData[] = [
     {
-        id: 1,
+        _id: 1,
         title: "Service 1",
         description: "Description 1",
+        technologies: ["first", "second"],
         icon: "icon-1",
     },
     {
-        id: 2,
+        _id: 2,
         title: "Service 2",
         description: "Description 2",
+        technologies: ["first", "second"],
         icon: "icon-2",
     },
     {
-        id: 3,
+        _id: 3,
         title: "Service 3",
+        technologies: ["first", "second"],
         description: "Description 3",
         icon: "icon-3",
     },

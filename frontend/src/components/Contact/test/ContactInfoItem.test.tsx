@@ -4,7 +4,7 @@ import { ContactInfoItem } from "..";
 import { contactModels } from "../../../models";
 
 const mockContactInfoItem: contactModels.IContactInfoData = {
-    id: 1,
+    _id: 1,
     label: "Address",
     info: "123 Main Street, City, Country",
     icon: "location",

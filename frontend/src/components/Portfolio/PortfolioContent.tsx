@@ -38,15 +38,21 @@ const PortfolioContent: React.FC<IPortfolioContentProps> = (
 
     const filterAndSortProjects = (data: any, countOutput: number) =>
         data
-            .filter((element) => element.name && element.description)
-            .sort(function (a, b) {
-                return new Date(b.created_at) - new Date(a.created_at);
+            .filter(
+                (element: any) =>
+                    element.name && element.description && element.created_at
+            )
+            .sort(function (a: any, b: any) {
+                return (
+                    new Date(b.created_at).getTime() -
+                    new Date(a.created_at).getTime()
+                );
             })
             .slice(0, countOutput);
 
     return (
         <div className="row">
-            {filterAndSortProjects(githubData, 9).map((project) => {
+            {filterAndSortProjects(githubData, 9).map((project: any) => {
                 return (
                     <PortfolioItem
                         key={project.id}

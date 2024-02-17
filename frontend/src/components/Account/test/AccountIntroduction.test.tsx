@@ -5,8 +5,8 @@ import { socialModels } from "../../../models";
 
 test("renders the AccountIntroduction component", () => {
     const mockedSocialData: socialModels.ISocialData[] = [
-        { id: 1, type: "facebook", link: "https://facebook.com" },
-        { id: 2, type: "twitter", link: "https://twitter.com" },
+        { _id: 1, type: "facebook", link: "https://facebook.com" },
+        { _id: 2, type: "twitter", link: "https://twitter.com" },
     ];
 
     render(<AccountIntroduction socialData={mockedSocialData} />);
