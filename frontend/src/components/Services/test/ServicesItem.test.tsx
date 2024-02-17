@@ -4,8 +4,9 @@ import { ServicesItem } from "..";
 import { toolsModels } from "../../../models";
 
 const sampleProps: toolsModels.IToolsData = {
-    id: 1,
+    _id: 1,
     title: "Web Design",
+    technologies: ["first", "second"],
     description: "Lorem ipsum dolor sit amet",
     icon: "sample-icon",
 };

@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { AboutSkills } from "..";
+import { skillsModels } from "../../../models";
 
 test("renders the AboutSkills component correctly", () => {
-    render(<AboutSkills />);
+    render(<AboutSkills skillsData={{} as skillsModels.ISkillsData[]} />);
 
     const aboutSkillsElement = screen.getByTestId("about-skills");
     expect(aboutSkillsElement).toBeInTheDocument();

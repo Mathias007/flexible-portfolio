@@ -4,7 +4,7 @@ import { SkillsItem } from "..";
 import { skillsModels } from "../../../models";
 
 const mockSkillsData: skillsModels.ISkillsData = {
-    id: 1,
+    _id: 1,
     skill: "Test Skill",
     value: 75,
 };
@@ -12,9 +12,10 @@ const mockSkillsData: skillsModels.ISkillsData = {
 test("renders the SkillsItem component correctly", () => {
     render(
         <SkillsItem
-            id={mockSkillsData.id}
+            _id={mockSkillsData._id}
             skill={mockSkillsData.skill}
             value={mockSkillsData.value}
+            maxValue={100}
         />
     );
     const skillsItemElement = screen.getByTestId("skills-item");
