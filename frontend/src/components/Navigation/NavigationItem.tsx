@@ -3,6 +3,7 @@ import { FC } from "react";
 import Icon from "../general/Icon";
 
 import { navigationModels } from "../../models";
+import { Link } from "react-router-dom";
 
 interface INavigationItemProps extends navigationModels.INavigationData {
     isActive: boolean;
@@ -19,13 +20,13 @@ const NavigationItem: FC<INavigationItemProps> = ({
 }) => {
     return (
         <li onClick={onItemClick} data-testid={`navigation-item-${id}`}>
-            <a
-                href={link}
+            <Link
+                to={link}
                 className={isActive ? "active" : ""}
                 data-testid={`navigation-link-${id}`}
             >
                 <Icon type={icon} className="nav-icon" /> {label}
-            </a>
+            </Link>
         </li>
     );
 };

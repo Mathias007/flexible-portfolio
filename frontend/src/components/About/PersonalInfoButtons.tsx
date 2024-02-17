@@ -1,8 +1,9 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import { personalData } from "../../data";
 import { RoutesPaths } from "../../config";
-const { RESUME } = RoutesPaths;
+const { RESUME, CONTACT } = RoutesPaths;
 const { downloadButtonLabel, contactButtonLabel } = personalData;
 
 const PersonalInfoButtons: FC = () => {
@@ -11,9 +12,9 @@ const PersonalInfoButtons: FC = () => {
             <a href={RESUME} download="resume.pdf" className="btn">
                 {downloadButtonLabel}
             </a>
-            <a href="#contact" className="btn hire-me">
+            <Link to={`/${CONTACT}`} className="btn hire-me">
                 {contactButtonLabel}
-            </a>
+            </Link>
         </div>
     );
 };
