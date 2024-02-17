@@ -549,7 +549,9 @@ h3.my-proffesion {
     max-width: 33.33%;
 }
 
-.service .service-item .service-item-inner {
+.service .service-item .service-item-inner,
+.portfolio .portfolio-item .portfolio-item-inner
+{
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
@@ -558,7 +560,8 @@ h3.my-proffesion {
     transition: all 0.3s ease;
 }
 
-.service .service-item .service-item-inner:hover {
+.service .service-item .service-item-inner:hover,
+.portfolio .portfolio-item .portfolio-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
@@ -590,7 +593,8 @@ h3.my-proffesion {
     color: #ffffff;
 }
 
-.service .service-item .service-item-inner h4 {
+.service .service-item .service-item-inner h4,
+.portfolio .portfolio-item .portfolio-item-inner h4 {
     font-size: 18px;
     margin-bottom: 15px;
     color: var(--text-black-900);
@@ -598,7 +602,8 @@ h3.my-proffesion {
     text-transform: capitalize;
 }
 
-.service .service-item .service-item-inner p {
+.service .service-item .service-item-inner p,
+.portfolio .portfolio-item .portfolio-item-inner p {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
@@ -630,7 +635,7 @@ h3.my-proffesion {
     margin-bottom: 30px;
 }
 
-.portfolio .portfolio-item-inner {
+/* .portfolio .portfolio-item-inner {
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
@@ -640,7 +645,7 @@ h3.my-proffesion {
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     display: block;
-}
+} */
 
 /* Contact */
 .contact-title {
