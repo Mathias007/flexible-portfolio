@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
     About,
@@ -6,16 +7,17 @@ import {
     Aside,
     Contact,
     Home,
-    // Portfolio,
+    Portfolio,
     Services,
-    Timeline
+    Timeline,
 } from "./components/sections";
 
 import { StyleSwitcher } from "./components/general";
 
-import "./css/style.css";
-import "./css/style-2.css";
-import "./css/style-switcher.css";
+import "./assets/css/style.css";
+import "./assets/css/style-2.css";
+import "./assets/css/style-switcher.css";
+import { RoutesPaths } from "./config";
 
 function App(): JSX.Element {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
@@ -25,24 +27,47 @@ function App(): JSX.Element {
     };
 
     return (
-        <div className={isDarkMode ? "dark" : "light"} data-testid="app">
-            <div className="main-container">
-                <Aside />
-                <div className="main-content">
-                    <Home />
-                    <About />
-                    <Timeline />
-                    <Services />
-                    {/* <Portfolio /> */}
-                    <Contact />
-                    {/* <Account /> */}
+        <Router>
+            <div className={isDarkMode ? "dark" : "light"} data-testid="app">
+                <div className="main-container">
+                    <Aside />
+                    <div className="main-content">
+                        <Routes>
+                            <Route path={RoutesPaths.ROOT} element={<Home />} />
+                            <Route path={RoutesPaths.HOME} element={<Home />} />
+                            <Route
+                                path={RoutesPaths.ABOUT}
+                                element={<About />}
+                            />
+                            <Route
+                                path={RoutesPaths.TIMELINE}
+                                element={<Timeline />}
+                            />
+                            <Route
+                                path={RoutesPaths.SERVICES}
+                                element={<Services />}
+                            />
+                            <Route
+                                path={RoutesPaths.CONTACT}
+                                element={<Contact />}
+                            />
+                            <Route
+                                path={RoutesPaths.PORTFOLIO}
+                                element={<Portfolio />}
+                            />
+                            {/* <Route
+                                path={RoutesPaths.ACCOUNT}
+                                element={<Account />}
+                            /> */}
+                        </Routes>
+                    </div>
                 </div>
+                <StyleSwitcher
+                    isDarkMode={isDarkMode}
+                    toggleDarkMode={toggleDarkMode}
+                />
             </div>
-            <StyleSwitcher
-                isDarkMode={isDarkMode}
-                toggleDarkMode={toggleDarkMode}
-            />
-        </div>
+        </Router>
     );
 }
 
