@@ -11,7 +11,7 @@ test("renders the contact form correctly", () => {
     const emailInput = screen.getByPlaceholderText("Email");
     const subjectInput = screen.getByPlaceholderText("Subject");
     const messageInput = screen.getByPlaceholderText("Message");
-    const submitButton = screen.getByText("Send Message");
+    const submitButton = screen.getByTestId("button");
 
     expect(nameInput).toBeInTheDocument();
     expect(emailInput).toBeInTheDocument();

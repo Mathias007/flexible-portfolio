@@ -17,11 +17,12 @@ const ContactInfoItem: FC<IContactInfoItemProps> = ({
     icon,
 }) => {
     return (
-        <Link to={link || ""} target={link ? "_blank" : ""}>
-            <div
-                className="contact-info-item padd-15"
-                data-testid="contact-info-item"
-            >
+        <Link
+            to={link || ""}
+            target={link ? "_blank" : ""}
+            data-testid="contact-info-item"
+        >
+            <div className="contact-info-item padd-15">
                 <div className="icon" data-testid="contact-icon">
                     <Icon type={icon} className="contact-icon" />
                 </div>
