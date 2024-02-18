@@ -37,7 +37,7 @@ describe("TimelineService", () => {
             );
 
             await expect(timelineService.getTimelineData()).rejects.toThrow(
-                "Failed to fetch timeline data"
+                "Failed to fetch TimelineData"
             );
 
             expect(TimelineDataModel.find).toHaveBeenCalledTimes(1);

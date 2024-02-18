@@ -37,7 +37,7 @@ describe("SocialService", () => {
             );
 
             await expect(socialService.getSocialData()).rejects.toThrow(
-                "Failed to fetch social data"
+                "Failed to fetch SocialData"
             );
 
             expect(SocialDataModel.find).toHaveBeenCalledTimes(1);

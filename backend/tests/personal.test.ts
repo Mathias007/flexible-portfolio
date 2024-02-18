@@ -36,7 +36,7 @@ describe("PersonalService", () => {
             );
 
             await expect(personalService.getPersonalData()).rejects.toThrow(
-                "Failed to fetch personal data"
+                "Failed to fetch PersonalData"
             );
             expect(PersonalDataModel.find).toHaveBeenCalledTimes(1);
             expect(PersonalDataModel.find).toHaveBeenCalledWith({});

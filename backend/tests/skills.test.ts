@@ -37,7 +37,7 @@ describe("SkillsService", () => {
             );
 
             await expect(skillsService.getSkillsData()).rejects.toThrow(
-                "Failed to fetch skills data"
+                "Failed to fetch SkillsData"
             );
 
             expect(SkillsDataModel.find).toHaveBeenCalledTimes(1);
