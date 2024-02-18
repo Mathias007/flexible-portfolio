@@ -5,7 +5,12 @@ import cors from "cors";
 
 import router from "./routes";
 
-import { ConfigVariables, DatabaseNames, ServerPaths } from "./config";
+import {
+    ConfigVariables,
+    DatabaseNames,
+    ServerMessages,
+    ServerPaths,
+} from "./config";
 
 const { CORS_ORIGIN, CONNECTION_STRING, PORT_NUMBER } = ConfigVariables;
 const { Database } = DatabaseNames;
@@ -28,5 +33,5 @@ app.use(cors(corsOptions));
 app.use(ServerPaths.API, router);
 
 app.listen(PORT_NUMBER, () => {
-    console.log(`Server is running on http://localhost:${PORT_NUMBER}`);
+    console.log(ServerMessages.SERVER_START_SUCCESS);
 });
