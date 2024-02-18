@@ -1,5 +1,5 @@
 const RoutesPaths = {
-    RESUME: "/src/assets/resume.pdf",
+    RESUME: "/assets/resume.pdf",
     ROOT: "/",
     HOME: "home",
     ABOUT: "about",
