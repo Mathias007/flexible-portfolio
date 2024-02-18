@@ -37,7 +37,7 @@ describe("PortfolioService", () => {
             );
 
             await expect(portfolioService.getPortfolioData()).rejects.toThrow(
-                "Failed to fetch portfolio data"
+                "Failed to fetch PortfolioData"
             );
 
             expect(PortfolioDataModel.find).toHaveBeenCalledTimes(1);

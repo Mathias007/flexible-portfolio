@@ -37,7 +37,7 @@ describe("ToolsService", () => {
             );
 
             await expect(toolsService.getToolsData()).rejects.toThrow(
-                "Failed to fetch tools data"
+                "Failed to fetch ToolsData"
             );
 
             expect(ToolsDataModel.find).toHaveBeenCalledTimes(1);

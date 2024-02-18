@@ -37,7 +37,7 @@ describe("ContactService", () => {
             );
 
             await expect(contactService.getContactInfoData()).rejects.toThrow(
-                "Failed to fetch contact info data"
+                "Failed to fetch ContactData"
             );
 
             expect(ContactDataModel.find).toHaveBeenCalledTimes(1);
