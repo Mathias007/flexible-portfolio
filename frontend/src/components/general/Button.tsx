@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface IButton {
+export interface IButton {
     type: "submit" | "reset" | "button";
     label: string;
     className: string;
