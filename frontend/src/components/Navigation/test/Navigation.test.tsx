@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Navigation } from "..";
+import { MemoryRouter } from "react-router-dom";
 
 const mockNavigationData = [
     { id: 1, label: "Home", link: "home", icon: "home" },
@@ -7,7 +8,11 @@ const mockNavigationData = [
 ];
 
 test("renders Navigation component correctly", () => {
-    render(<Navigation navigationData={mockNavigationData} />);
+    render(
+        <MemoryRouter>
+            <Navigation navigationData={mockNavigationData} />
+        </MemoryRouter>
+    );
     const navElement = screen.getByTestId("navigation");
     expect(navElement).toBeInTheDocument();
 });
@@ -17,15 +22,23 @@ test("renders active navigation item correctly", () => {
     const mockNavigationDataWithActiveItem = mockNavigationData.map((item) =>
         item.id === activeLinkId ? { ...item, isActive: true } : item
     );
-    
-    render(<Navigation navigationData={mockNavigationDataWithActiveItem} />);
+
+    render(
+        <MemoryRouter>
+            <Navigation navigationData={mockNavigationDataWithActiveItem} />
+        </MemoryRouter>
+    );
     const activeNavItem = screen.getByTestId("navigation-item-2");
-    
-    expect(activeNavItem).toBeInTheDocument();    
+
+    expect(activeNavItem).toBeInTheDocument();
 });
 
 test("renders navigation without active item correctly", () => {
-    render(<Navigation navigationData={mockNavigationData} />);
+    render(
+        <MemoryRouter>
+            <Navigation navigationData={mockNavigationData} />
+        </MemoryRouter>
+    );
     const activeNavItem = screen.queryByTestId("navigation-item-active");
 
     expect(activeNavItem).not.toBeInTheDocument();
