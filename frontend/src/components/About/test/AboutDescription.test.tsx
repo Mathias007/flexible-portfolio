@@ -9,9 +9,9 @@ test("renders the AboutDescription component correctly", () => {
 
     const header = screen.getByTestId("description-header");
     const span = screen.getByTestId("description-span");
-    const paragraph = screen.getByTestId("description-paragraph");
+    const paragraphArray = screen.getAllByTestId("description-paragraph");
 
     expect(header).toBeInTheDocument();
     expect(span).toBeInTheDocument();
-    expect(paragraph).toBeInTheDocument();
+    expect(paragraphArray).toHaveLength(3);
 });

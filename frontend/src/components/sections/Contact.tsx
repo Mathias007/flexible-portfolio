@@ -1,10 +1,6 @@
 import { FC, useEffect, useState } from "react";
 
-import {
-    ContactSectionHeading,
-    ContactInfo,
-    ContactForm,
-} from "../Contact";
+import { ContactSectionHeading, ContactInfo, ContactForm } from "../Contact";
 
 import { contactModels } from "../../models";
 import { contactData, headersData } from "../../data";

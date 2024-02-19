@@ -9,21 +9,24 @@ const mockSkillsData: skillsModels.ISkillsData = {
     value: 75,
 };
 
+const maxValue: number = 100;
+
 test("renders the SkillsItem component correctly", () => {
     render(
         <SkillsItem
             _id={mockSkillsData._id}
             skill={mockSkillsData.skill}
             value={mockSkillsData.value}
-            maxValue={100}
+            maxValue={maxValue}
         />
     );
+
     const skillsItemElement = screen.getByTestId("skills-item");
 
     expect(skillsItemElement).toBeInTheDocument();
 
     const skillName = screen.getByText(mockSkillsData.skill);
-    const skillValue = screen.getByText(`${mockSkillsData.value}%`);
+    const skillValue = screen.getByText(`${(mockSkillsData.value / maxValue * 100)} years`);
 
     expect(skillName).toBeInTheDocument();
     expect(skillValue).toBeInTheDocument();

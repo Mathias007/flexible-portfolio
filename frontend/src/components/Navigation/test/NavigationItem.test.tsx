@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { NavigationItem } from "..";
 
 import { vi } from "vitest";
+import { MemoryRouter } from "react-router-dom";
 
 const mockNavigationItem = {
     id: 1,
@@ -9,11 +10,15 @@ const mockNavigationItem = {
     link: "home",
     icon: "home",
     isActive: false,
-    onItemClick: vi.fn()
+    onItemClick: vi.fn(),
 };
 
 test("renders NavigationItem component correctly", () => {
-    render(<NavigationItem {...mockNavigationItem} />);
+    render(
+        <MemoryRouter>
+            <NavigationItem {...mockNavigationItem} />
+        </MemoryRouter>
+    );
     const navigationItem = screen.getByTestId("navigation-item-1");
 
     expect(navigationItem).toBeInTheDocument();
@@ -21,14 +26,22 @@ test("renders NavigationItem component correctly", () => {
 
 test("renders active NavigationItem component correctly", () => {
     const mockActiveItem = { ...mockNavigationItem, isActive: true };
-    render(<NavigationItem {...mockActiveItem} />);
+    render(
+        <MemoryRouter>
+            <NavigationItem {...mockActiveItem} />
+        </MemoryRouter>
+    );
     const navigationLink = screen.getByTestId("navigation-link-1");
 
     expect(navigationLink).toHaveClass("active");
 });
 
 test("handles click correctly", () => {
-    render(<NavigationItem {...mockNavigationItem} />);
+    render(
+        <MemoryRouter>
+            <NavigationItem {...mockNavigationItem} />
+        </MemoryRouter>
+    );
     const navigationItem = screen.getByTestId("navigation-item-1");
 
     fireEvent.click(navigationItem);

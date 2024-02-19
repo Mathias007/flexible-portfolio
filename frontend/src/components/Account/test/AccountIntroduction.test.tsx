@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { AccountIntroduction } from "..";
 
 import { socialModels } from "../../../models";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders the AccountIntroduction component", () => {
     const mockedSocialData: socialModels.ISocialData[] = [
@@ -9,7 +10,11 @@ test("renders the AccountIntroduction component", () => {
         { _id: 2, type: "twitter", link: "https://twitter.com" },
     ];
 
-    render(<AccountIntroduction socialData={mockedSocialData} />);
+    render(
+        <MemoryRouter>
+            <AccountIntroduction socialData={mockedSocialData} />
+        </MemoryRouter>
+    );
     const accountIntroduction = screen.getByTestId("account-introduction");
 
     expect(accountIntroduction).toBeInTheDocument();

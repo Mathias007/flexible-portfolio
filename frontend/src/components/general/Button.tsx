@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface IButton {
+export interface IButton {
     type: "submit" | "reset" | "button";
     label: string;
     className: string;
@@ -8,7 +8,7 @@ interface IButton {
 
 const Button: FC<IButton> = ({ type, label, className }) => {
     return (
-        <button type={type} className={className}>
+        <button type={type} className={className} data-testid="button">
             {label}
         </button>
     );
