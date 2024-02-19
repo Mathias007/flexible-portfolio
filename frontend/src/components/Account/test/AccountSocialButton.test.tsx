@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import { AccountSocialButton } from "..";
 import { socialModels } from "../../../models";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders the AccountSocialButton component", () => {
     const mockedSocialData: socialModels.ISocialData[] = [
@@ -10,11 +11,13 @@ test("renders the AccountSocialButton component", () => {
     ];
 
     render(
-        <AccountSocialButton
-            _id={mockedSocialData[0]._id}
-            type={mockedSocialData[0].type}
-            link={mockedSocialData[0].link}
-        />
+        <MemoryRouter>
+            <AccountSocialButton
+                _id={mockedSocialData[0]._id}
+                type={mockedSocialData[0].type}
+                link={mockedSocialData[0].link}
+            />
+        </MemoryRouter>
     );
     const socialButton = screen.getByTestId("account-social-button");
 

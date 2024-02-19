@@ -1,8 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { AccountForm } from "..";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders the AccountForm component", () => {
-    render(<AccountForm />);
+    render(
+        <MemoryRouter>
+            <AccountForm />
+        </MemoryRouter>
+    );
     const accountForm = screen.getByTestId("account-form");
 
     expect(accountForm).toBeInTheDocument();

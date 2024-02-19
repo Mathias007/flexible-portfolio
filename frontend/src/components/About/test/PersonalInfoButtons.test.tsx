@@ -1,8 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { PersonalInfoButtons } from "..";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders the PersonalInfoButtons component correctly", () => {
-    render(<PersonalInfoButtons />);
+    render(
+        <MemoryRouter>
+            <PersonalInfoButtons />
+        </MemoryRouter>
+    );
     const personalInfoButtonsElement = screen.getByTestId(
         "personal-info-buttons"
     );
@@ -10,8 +15,8 @@ test("renders the PersonalInfoButtons component correctly", () => {
     expect(personalInfoButtonsElement).toBeInTheDocument();
 
     const downloadCVButton = screen.getByRole("link", { name: /download cv/i });
-    const hireMeButton = screen.getByRole("link", { name: /hire me/i });
+    const contactMeButton = screen.getByRole("link", { name: /contact me/i });
 
     expect(downloadCVButton).toBeInTheDocument();
-    expect(hireMeButton).toBeInTheDocument();
+    expect(contactMeButton).toBeInTheDocument();
 });
