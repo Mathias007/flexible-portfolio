@@ -20,7 +20,7 @@ describe("StyleSwitcher component", () => {
         render(<StyleSwitcher isDarkMode={false} toggleDarkMode={() => {}} />);
 
         const colorOption = screen.getByTestId("color-1");
-        const color = "#ec1839";
+        const color = "#1854b4";
 
         const setPropertyMock = vi.fn();
         document.documentElement.style.setProperty = setPropertyMock;
