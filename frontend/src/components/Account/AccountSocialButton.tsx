@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Icon } from "../general";
-import { socialModels } from "../../models";
+import { socialModels } from "../../config/models";
 
 const AccountSocialButton: FC<socialModels.ISocialData> = ({ type, link }) => {
     return (

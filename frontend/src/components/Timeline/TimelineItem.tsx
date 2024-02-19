@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { Icon } from "../general";
-import { timelineModels } from "../../models";
+import { timelineModels } from "../../config/models";
 
 const TimelineItem: FC<timelineModels.ITimelineData> = ({
     title,

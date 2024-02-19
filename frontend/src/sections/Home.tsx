@@ -6,7 +6,7 @@ import {
     HomeDescription,
     HomeActions,
     HomePicture,
-} from "../Home";
+} from "../components/Home";
 
 const Home: FC = () => {
     return (

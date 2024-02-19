@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { skillsModels } from "../../models";
-import { aboutData } from "../../data";
+import { skillsModels } from "../../config/models";
+import { aboutData } from "../../config/data";
 
 const SkillsItem: FC<skillsModels.ISkillsItemData> = ({
     skill,

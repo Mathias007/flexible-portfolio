@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { homeData } from "../../data";
+import { homeData } from "../../config/data";
 
 const HomeDescription: FC = () => {
     return (

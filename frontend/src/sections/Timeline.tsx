@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
 
-import { timelineModels } from "../../models";
-import { ConfigVariables, ServerPaths } from "../../config";
+import { Title } from "../components/general";
+import { TimelineSection } from "../components/Timeline";
 
-import { TimelineSection } from "../Timeline";
-import { Title } from "../general";
-import { headersData } from "../../data";
+import { timelineModels } from "../config/models";
+import { ConfigVariables, ServerPaths } from "../config/global";
+import { headersData } from "../config/data";
 
 const { SERVER_URL } = ConfigVariables;
 const { API, TIMELINE } = ServerPaths;

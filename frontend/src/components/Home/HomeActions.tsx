@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { homeData } from "../../data";
-import { RoutesPaths } from "../../config";
+import { homeData } from "../../config/data";
+import { RoutesPaths } from "../../config/global";
 
 const HomeActions: FC = () => {
     return (

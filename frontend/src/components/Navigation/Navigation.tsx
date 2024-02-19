@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 
 import NavigationItem from "./NavigationItem";
 
-import { navigationModels } from "../../models";
+import { navigationModels } from "../../config/models";
 
 interface INavigationProps {
     navigationData: navigationModels.INavigationData[];

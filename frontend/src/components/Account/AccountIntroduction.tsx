@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { AccountSocialButton } from ".";
 
-import { socialModels } from "../../models";
+import { socialModels } from "../../config/models";
 
 interface IAccountIntroductionProps {
     socialData: socialModels.ISocialData[];

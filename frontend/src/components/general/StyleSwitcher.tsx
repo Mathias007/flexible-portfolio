@@ -1,8 +1,8 @@
 import { useState, FC } from "react";
 import Icon from "./Icon";
 
-import styleOptions from "../../data/skin.data";
-import { skinModels } from "../../models";
+import styleOptions from "../../config/data/skin.data";
+import { skinModels } from "../../config/models";
 
 interface IStyleSwitcherProps {
     isDarkMode: boolean;

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { personalData } from "../../data";
-import { RoutesPaths } from "../../config";
+import { personalData } from "../../config/data";
+import { RoutesPaths } from "../../config/global";
 const { RESUME, CONTACT } = RoutesPaths;
 const { downloadButtonLabel, contactButtonLabel } = personalData;
 

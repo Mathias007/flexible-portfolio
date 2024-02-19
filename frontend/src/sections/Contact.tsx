@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
 
-import { ContactSectionHeading, ContactInfo, ContactForm } from "../Contact";
+import { Title } from "../components/general";
+import { ContactSectionHeading, ContactInfo, ContactForm } from "../components/Contact";
 
-import { contactModels } from "../../models";
-import { contactData, headersData } from "../../data";
+import { contactModels } from "../config/models";
+import { contactData, headersData } from "../config/data";
+import { ConfigVariables, ServerPaths } from "../config/global";
 
-import { ConfigVariables, ServerPaths } from "../../config";
-import { Title } from "../general";
 const { SERVER_URL } = ConfigVariables;
 const { API, CONTACT } = ServerPaths;
 

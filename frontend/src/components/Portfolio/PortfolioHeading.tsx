@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { portfolioData } from "../../data";
+import { portfolioData } from "../../config/data";
 
 const PortfolioHeading: FC = () => {
     return (

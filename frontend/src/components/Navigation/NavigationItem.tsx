@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import Icon from "../general/Icon";
 
-import { navigationModels } from "../../models";
+import { navigationModels } from "../../config/models";
 import { Link } from "react-router-dom";
 
 interface INavigationItemProps extends navigationModels.INavigationData {

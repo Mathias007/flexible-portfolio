@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { AboutSkills } from "..";
-import { skillsModels } from "../../../models";
+import { skillsModels } from "../../../config/models";
 
 test("renders the AboutSkills component correctly", () => {
     const skillsData: skillsModels.ISkillsData[] = [

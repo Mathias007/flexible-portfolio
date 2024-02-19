@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AboutPersonalInfo } from "..";
-import { personalModels } from "../../../models";
+import { personalModels } from "../../../config/models";
 
 test("renders the AboutPersonalInfo component correctly", () => {
     const personalData:personalModels.IPersonalData[] = [

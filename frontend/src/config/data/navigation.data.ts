@@ -1,5 +1,5 @@
 import { navigationModels } from "../models";
-import { RoutesPaths } from "../config";
+import { RoutesPaths } from "../global";
 
 const navigationData: navigationModels.INavigationData[] = [
     { id: 0, label: "Home", link: RoutesPaths.HOME, icon: "home" },

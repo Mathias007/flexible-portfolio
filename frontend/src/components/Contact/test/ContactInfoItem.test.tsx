@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { ContactInfoItem } from "..";
 
-import { contactModels } from "../../../models";
+import { contactModels } from "../../../config/models";
 import { MemoryRouter } from "react-router-dom";
 
 const mockContactInfoItem: contactModels.IContactInfoData = {

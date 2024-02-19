@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
 import { AccountSocialButton } from "..";
-import { socialModels } from "../../../models";
+import { socialModels } from "../../../config/models";
 import { MemoryRouter } from "react-router-dom";
 
 test("renders the AccountSocialButton component", () => {
