@@ -13,9 +13,7 @@ interface IPortfolioContentProps {
 }
 
 const PortfolioContent: React.FC<IPortfolioContentProps> = (
-    {
-        // portfolioData,
-    }
+    // { portfolioData }
 ) => {
     const [githubData, setGithubData] = useState([]);
 

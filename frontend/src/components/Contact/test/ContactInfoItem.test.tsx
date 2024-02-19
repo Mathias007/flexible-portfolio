@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { ContactInfoItem } from "..";
 
 import { contactModels } from "../../../models";
+import { MemoryRouter } from "react-router-dom";
 
 const mockContactInfoItem: contactModels.IContactInfoData = {
     _id: 1,
@@ -11,7 +12,12 @@ const mockContactInfoItem: contactModels.IContactInfoData = {
 };
 
 test("renders a contact info item correctly", () => {
-    render(<ContactInfoItem {...mockContactInfoItem} />);
+    render(
+        <MemoryRouter>
+            <ContactInfoItem {...mockContactInfoItem} />
+        </MemoryRouter>
+    );
+
     const contactInfoItem = screen.getByTestId("contact-info-item");
 
     expect(contactInfoItem).toBeInTheDocument();

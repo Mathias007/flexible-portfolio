@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { PortfolioItem } from "..";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders portfolio item correctly", () => {
     // const logo = "logo.jpg";
@@ -13,12 +14,14 @@ test("renders portfolio item correctly", () => {
     };
 
     render(
-        <PortfolioItem
-            html_url={projectMockData.html_url}
-            language={projectMockData.language}
-            name={projectMockData.name}
-            description={projectMockData.description}
-        />
+        <MemoryRouter>
+            <PortfolioItem
+                html_url={projectMockData.html_url}
+                language={projectMockData.language}
+                name={projectMockData.name}
+                description={projectMockData.description}
+            />
+        </MemoryRouter>
     );
 
     const portfolioItem = screen.getByTestId("portfolio-item");
