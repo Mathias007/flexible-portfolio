@@ -1,8 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { Account } from "..";
+import { MemoryRouter } from "react-router-dom";
 
 test("renders the Account component", () => {
-    render(<Account />);
+    render(
+        <MemoryRouter>
+            <Account />
+        </MemoryRouter>
+    );
     const accountSection = screen.getByTestId("account-section");
 
     expect(accountSection).toBeInTheDocument();

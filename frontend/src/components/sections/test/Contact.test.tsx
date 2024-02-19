@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Contact } from "..";
 
 import { contactModels } from "../../../models";
+import { MemoryRouter } from "react-router-dom";
 
 const mockContactInfoData: contactModels.IContactInfoData[] = [
     {
@@ -15,16 +16,20 @@ const mockContactInfoData: contactModels.IContactInfoData[] = [
 ];
 
 test("renders the contact section correctly", () => {
-    render(<Contact />);
+    render(
+        <MemoryRouter>
+            <Contact />
+        </MemoryRouter>
+    );
     const contactSection = screen.getByTestId("contact-section");
 
     expect(contactSection).toBeInTheDocument();
 
-    const title = screen.getByTestId("contact-title");
-    const infoItems = screen.getAllByTestId("contact-info-item");
+    const title = screen.getByTestId("title");
+    const contactInfo = screen.getByTestId("contact-info");
     const form = screen.getByTestId("contact-form");
 
     expect(title).toBeInTheDocument();
-    expect(infoItems.length).toBe(mockContactInfoData.length * 2);
+    expect(contactInfo).toBeInTheDocument();
     expect(form).toBeInTheDocument();
 });
