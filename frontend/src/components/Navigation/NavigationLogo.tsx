@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { RoutesPaths } from "../../config";
+import { RoutesPaths } from "../../config/global";
 
 const NavigationLogo: FC = () => {
     return (

@@ -1,15 +1,14 @@
 import { FC, useEffect, useState } from "react";
 
+import { Title } from "../components/general";
 import {
     PortfolioHeading,
     PortfolioContent,
-} from "../Portfolio";
+} from "../components/Portfolio";
 
-import { portfolioModels } from "../../models";
-
-import { ConfigVariables, ServerPaths } from "../../config";
-import { Title } from "../general";
-import { headersData } from "../../data";
+import { portfolioModels } from "../config/models";
+import { ConfigVariables, ServerPaths } from "../config/global";
+import { headersData } from "../config/data";
 
 const { SERVER_URL } = ConfigVariables;
 const { API, PORTFOLIO } = ServerPaths;

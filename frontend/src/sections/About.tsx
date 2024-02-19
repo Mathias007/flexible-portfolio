@@ -1,16 +1,16 @@
 import { FC, useEffect, useState } from "react";
 
+import { Title } from "../components/general";
 import {
     AboutDescription,
     AboutPersonalInfo,
     AboutSkills,
-} from "../About";
+} from "../components/About";
 
-import { personalModels, skillsModels } from "../../models";
+import { personalModels, skillsModels } from "../config/models";
+import { ConfigVariables, ServerPaths } from "../config/global";
+import { headersData } from "../config/data";
 
-import { ConfigVariables, ServerPaths } from "../../config";
-import { headersData } from "../../data";
-import { Title } from "../general";
 const { SERVER_URL } = ConfigVariables;
 const { API, PERSONAL, SKILLS } = ServerPaths;
 

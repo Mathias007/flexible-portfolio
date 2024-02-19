@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { portfolioData } from "../../data";
+import { portfolioData } from "../../config/data";
 
 interface IPortfolioItemProps {
     description: string;

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import { PortfolioItem } from ".";
-import { portfolioModels } from "../../models";
+import { portfolioModels } from "../../config/models";
 
-import { ConfigVariables } from "../../config";
+import { ConfigVariables } from "../../config/global";
 import { Link } from "react-router-dom";
-import { portfolioData } from "../../data";
+import { portfolioData } from "../../config/data";
 const { GITHUB_API_URL, GITHUB_ACCOUNT } = ConfigVariables;
 
 interface IPortfolioContentProps {

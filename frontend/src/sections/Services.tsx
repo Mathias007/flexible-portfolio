@@ -1,11 +1,12 @@
 import { FC, useEffect, useState } from "react";
 
-import { ServicesContent } from "../Services";
-import { toolsModels } from "../../models";
+import { Title } from "../components/general";
+import { ServicesContent } from "../components/Services";
 
-import { ConfigVariables, ServerPaths } from "../../config";
-import { Title } from "../general";
-import { headersData } from "../../data";
+import { toolsModels } from "../config/models";
+import { ConfigVariables, ServerPaths } from "../config/global";
+import { headersData } from "../config/data";
+
 const { SERVER_URL } = ConfigVariables;
 const { API, TOOLS } = ServerPaths;
 

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { TimelineSection } from "..";
 
-import { timelineModels } from "../../../models";
+import { timelineModels } from "../../../config/models";
 
 const mockTimelineData: timelineModels.ITimelineData[] = [
     {

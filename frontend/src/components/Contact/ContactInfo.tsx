@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ContactInfoItem } from ".";
-import { contactModels } from "../../models";
+import { contactModels } from "../../config/models";
 
 interface IContactInfoPros {
     contactInfoData: contactModels.IContactInfoData[];

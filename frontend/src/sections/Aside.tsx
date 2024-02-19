@@ -1,8 +1,12 @@
 import { FC } from "react";
 
-import { Navigation, NavigationLogo, NavigationToggler } from "../Navigation";
+import {
+    Navigation,
+    NavigationLogo,
+    NavigationToggler,
+} from "../components/Navigation";
 
-import navigationData from "../../data/navigation.data";
+import { navigationData } from "../config/data";
 
 const Aside: FC = () => {
     return (

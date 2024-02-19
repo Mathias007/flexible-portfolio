@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 
-import { AccountForm, AccountIntroduction } from "../Account";
+import { AccountForm, AccountIntroduction } from "../components/Account";
 
-import { socialModels } from "../../models";
+import { socialModels } from "../config/models";
+import { ConfigVariables, ServerPaths } from "../config/global";
 
-import { ConfigVariables, ServerPaths } from "../../config";
 const { SERVER_URL } = ConfigVariables;
 const { API, SOCIAL } = ServerPaths;
 

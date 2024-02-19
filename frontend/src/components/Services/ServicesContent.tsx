@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ServicesItem } from ".";
 
-import { toolsModels } from "../../models";
+import { toolsModels } from "../../config/models";
 
 interface IServicesContentProps {
     services: toolsModels.IToolsData[];

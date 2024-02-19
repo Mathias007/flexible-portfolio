@@ -10,14 +10,14 @@ import {
     Portfolio,
     Services,
     Timeline,
-} from "./components/sections";
+} from "./sections";
 
 import { StyleSwitcher } from "./components/general";
 
 import "./assets/css/style.css";
 import "./assets/css/style-2.css";
 import "./assets/css/style-switcher.css";
-import { RoutesPaths } from "./config";
+import { RoutesPaths } from "./config/global";
 
 function App(): JSX.Element {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);

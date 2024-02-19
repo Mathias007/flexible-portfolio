@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { homeData } from "../../data";
+import { homeData } from "../../config/data";
 
 const HomeSubHeader: FC = () => {
     return (

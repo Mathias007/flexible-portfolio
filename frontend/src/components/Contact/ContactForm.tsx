@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { send } from "emailjs-com";
 
-import { ConfigVariables } from "../../config";
-import { contactData } from "../../data";
+import { ConfigVariables } from "../../config/global";
+import { contactData } from "../../config/data";
 import { Button, FormField } from "../general";
 
 const { EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, EMAIL_USER_ID } = ConfigVariables;

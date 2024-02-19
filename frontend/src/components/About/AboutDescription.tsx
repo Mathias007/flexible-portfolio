@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { aboutData } from "../../data";
+import { aboutData } from "../../config/data";
 
 const AboutDescription: FC = () => {
     return (

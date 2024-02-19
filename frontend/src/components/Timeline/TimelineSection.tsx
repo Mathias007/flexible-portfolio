@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { TimelineItem } from ".";
-import { timelineModels } from "../../models";
+import { timelineModels } from "../../config/models";
 
 interface IAboutTimelineProps {
     header: string;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { personalModels } from "../../models";
+import { personalModels } from "../../config/models";
 
 import { PersonalInfoButtons, PersonalInfoItem } from ".";
 

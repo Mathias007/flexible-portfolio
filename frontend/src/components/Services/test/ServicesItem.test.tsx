@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { ServicesItem } from "..";
 
-import { toolsModels } from "../../../models";
+import { toolsModels } from "../../../config/models";
 
 const sampleProps: toolsModels.IToolsData = {
     _id: 1,

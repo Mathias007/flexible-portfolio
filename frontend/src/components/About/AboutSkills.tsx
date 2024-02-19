@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { SkillsItem } from ".";
 
-import { skillsModels } from "../../models";
+import { skillsModels } from "../../config/models";
 
 interface IAboutSkills {
     skillsData: skillsModels.ISkillsData[];
