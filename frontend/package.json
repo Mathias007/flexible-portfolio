@@ -20,6 +20,7 @@
     "emailjs-com": "3.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-favicon": "2.0.3",
     "react-router-dom": "6.22.1",
     "react-type-animation": "3.2.0"
   },
