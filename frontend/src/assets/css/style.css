@@ -56,6 +56,10 @@ ul {
     padding-left: 270px;
 }
 
+.main-content.wide {
+    padding-left: 0;
+}
+
 .padd-15 {
     padding-left: 15px;
     padding-right: 15px;
@@ -152,6 +156,10 @@ ul {
     z-index: 10;
 }
 
+.aside.closed {
+    left: -300px;
+}
+
 .aside .logo {
     position: absolute;
     top: 50px;
@@ -201,12 +209,11 @@ ul {
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
     position: fixed;
-    left: 300px;
-    top: 20px;
+    left: 20px;
+    top: 10px;
     border-radius: 5px;
     background-color: var(--bg-black-100);
-    /* display: flex; */
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -738,13 +745,13 @@ h3.my-proffesion {
 }
 
 @media (max-width: 1199px) {
-    .aside {
+    /* .aside {
         left: -270px;
     }
 
     .main-content {
         padding-left: 0;
-    }
+    } */
 
     .about .about-content .personal-info .info-item p span {
         display:  block;

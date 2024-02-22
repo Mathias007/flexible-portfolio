@@ -1,8 +1,16 @@
 import { FC } from "react";
 
-const NavigationToggler: FC = () => {
+interface INavigationTogglerProps {
+    onClick: () => void;
+}
+
+const NavigationToggler: FC<INavigationTogglerProps> = ({ onClick }) => {
     return (
-        <div className="nav-toggler" data-testid="navigation-toggler">
+        <div
+            className="nav-toggler"
+            data-testid="navigation-toggler"
+            onClick={onClick}
+        >
             <span></span>
         </div>
     );
