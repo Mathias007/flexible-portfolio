@@ -19,16 +19,27 @@ import "./assets/css/style-2.css";
 import "./assets/css/style-switcher.css";
 import { RoutesPaths } from "./config/global";
 
+import Favicon from "react-favicon";
+
+import warmFavicon from "./assets/favicon/warm/favicon.ico";
+
 function App(): JSX.Element {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+    const [favicon, setFavicon] = useState<string>(warmFavicon);
 
     const toggleDarkMode = (): void => {
         setIsDarkMode(!isDarkMode);
     };
 
+    const changeFavicon = (faviconUrl: string) => {
+        setFavicon(faviconUrl);
+    };
+
     return (
         <Router>
             <div className={isDarkMode ? "dark" : "light"} data-testid="app">
+                <Favicon url={favicon} />
+
                 <div className="main-container">
                     <Aside />
                     <div className="main-content">
@@ -65,6 +76,7 @@ function App(): JSX.Element {
                 <StyleSwitcher
                     isDarkMode={isDarkMode}
                     toggleDarkMode={toggleDarkMode}
+                    changeFavicon={changeFavicon}
                 />
             </div>
         </Router>

@@ -4,7 +4,13 @@ import StyleSwitcher from "../StyleSwitcher";
 
 describe("StyleSwitcher component", () => {
     it("should toggle color menu when the toggler is clicked", () => {
-        render(<StyleSwitcher isDarkMode={false} toggleDarkMode={() => {}} />);
+        render(
+            <StyleSwitcher
+                isDarkMode={false}
+                toggleDarkMode={() => {}}
+                changeFavicon={() => {}}
+            />
+        );
 
         const toggler = screen.getByTestId("style-switcher-toggler");
 
@@ -17,7 +23,13 @@ describe("StyleSwitcher component", () => {
     });
 
     it("should change the style when a color option is clicked", () => {
-        render(<StyleSwitcher isDarkMode={false} toggleDarkMode={() => {}} />);
+        render(
+            <StyleSwitcher
+                isDarkMode={false}
+                toggleDarkMode={() => {}}
+                changeFavicon={() => {}}
+            />
+        );
 
         const colorOption = screen.getByTestId("color-1");
         const color = "#1854b4";
@@ -36,6 +48,7 @@ describe("StyleSwitcher component", () => {
             <StyleSwitcher
                 isDarkMode={false}
                 toggleDarkMode={toggleDarkModeMock}
+                changeFavicon={() => {}}
             />
         );
 

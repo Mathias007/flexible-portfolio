@@ -1,19 +1,20 @@
 import { render, screen } from "@testing-library/react";
-import { Contact } from "..";
-
-import { contactModels } from "../../../config/models";
 import { MemoryRouter } from "react-router-dom";
 
-const mockContactInfoData: contactModels.IContactInfoData[] = [
-    {
-        _id: 1,
-        label: "Address",
-        info: "123 Main Street, City, Country",
-        link: "https://test.pl",
-        icon: "location",
-    },
-    { _id: 2, label: "Email", info: "example@example.com", icon: "email" },
-];
+import { Contact } from "..";
+
+// import { contactModels } from "../../config/models";
+
+// const mockContactInfoData: contactModels.IContactInfoData[] = [
+//     {
+//         _id: 1,
+//         label: "Address",
+//         info: "123 Main Street, City, Country",
+//         link: "https://test.pl",
+//         icon: "location",
+//     },
+//     { _id: 2, label: "Email", info: "example@example.com", icon: "email" },
+// ];
 
 test("renders the contact section correctly", () => {
     render(

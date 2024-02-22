@@ -7,11 +7,13 @@ import { skinModels } from "../../config/models";
 interface IStyleSwitcherProps {
     isDarkMode: boolean;
     toggleDarkMode: () => void;
+    changeFavicon: (faviconUrl: string) => void;
 }
 
 const StyleSwitcher: FC<IStyleSwitcherProps> = ({
     isDarkMode,
     toggleDarkMode,
+    changeFavicon,
 }) => {
     const [isColorMenuOpen, setIsColorMenuOpen] = useState<boolean>(false);
 
@@ -19,9 +21,10 @@ const StyleSwitcher: FC<IStyleSwitcherProps> = ({
         setIsColorMenuOpen(!isColorMenuOpen);
     };
 
-    const handleColorChange = (color: string) => {
+    const handleColorChange = (color: string, faviconUrl: string) => {
         const root = document.documentElement;
         root.style.setProperty("--skin-color", color);
+        changeFavicon(faviconUrl);
     };
 
     return (
@@ -58,7 +61,7 @@ const StyleSwitcher: FC<IStyleSwitcherProps> = ({
                         key={style.id}
                         className={style.title}
                         style={{ backgroundColor: style.color }}
-                        onClick={() => handleColorChange(style.color)}
+                        onClick={() => handleColorChange(style.color, style.favicon)}
                         data-testid={style.title}
                     ></span>
                 ))}
