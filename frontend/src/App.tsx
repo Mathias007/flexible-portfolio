@@ -27,6 +27,12 @@ function App(): JSX.Element {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
     const [favicon, setFavicon] = useState<string>(warmFavicon);
 
+    const [isMenuClosed, setIsMenuClosed] = useState<boolean>(false);
+
+    const toggleMenu = () => {
+        setIsMenuClosed(!isMenuClosed);
+    };
+
     const toggleDarkMode = (): void => {
         setIsDarkMode(!isDarkMode);
     };
@@ -41,8 +47,10 @@ function App(): JSX.Element {
                 <Favicon url={favicon} />
 
                 <div className="main-container">
-                    <Aside />
-                    <div className="main-content">
+                    <Aside isMenuClosed={isMenuClosed} toggler={toggleMenu} />
+                    <div
+                        className={`main-content ${isMenuClosed ? "wide" : ""}`}
+                    >
                         <Routes>
                             <Route path={RoutesPaths.ROOT} element={<Home />} />
                             <Route path={RoutesPaths.HOME} element={<Home />} />

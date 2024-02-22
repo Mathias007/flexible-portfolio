@@ -8,11 +8,20 @@ import {
 
 import { navigationData } from "../config/data";
 
-const Aside: FC = () => {
+interface IAside {
+    isMenuClosed: boolean;
+    toggler: () => void;
+}
+
+const Aside: FC<IAside> = ({ isMenuClosed, toggler }) => {
+
     return (
-        <div className="aside" data-testid="aside-section">
+        <div
+            className={`aside ${isMenuClosed ? "closed" : ""}`}
+            data-testid="aside-section"
+        >
             <NavigationLogo />
-            <NavigationToggler />
+            <NavigationToggler onClick={toggler} />
             <Navigation navigationData={navigationData} />
         </div>
     );
