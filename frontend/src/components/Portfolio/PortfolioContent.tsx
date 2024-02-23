@@ -55,29 +55,31 @@ const PortfolioContent: FC<IPortfolioContentProps> = () =>
                 .slice(0, countOutput);
 
         return (
-            <div className="row">
-                {filterAndSortProjects(githubData, 9).map((project: any) => {
-                    return (
-                        <Suspense fallback={<Loading />}>
-                            <PortfolioItem
-                                key={project.id}
-                                description={project.description}
-                                homepage={project.homepage}
-                                html_url={project.html_url}
-                                language={project.language}
-                                name={project.name}
-                            />
-                        </Suspense>
-                    );
-                })}
-                <Link
-                    to={GITHUB_ACCOUNT}
-                    target="_blank"
-                    className="btn hire-me"
-                >
-                    {portfolioData.portfolioMoreButtonLabel}
-                </Link>
-            </div>
+            <Suspense fallback={<Loading />}>
+                <div className="row">
+                    {filterAndSortProjects(githubData, 9).map(
+                        (project: any) => {
+                            return (
+                                <PortfolioItem
+                                    key={project.id}
+                                    description={project.description}
+                                    homepage={project.homepage}
+                                    html_url={project.html_url}
+                                    language={project.language}
+                                    name={project.name}
+                                />
+                            );
+                        }
+                    )}
+                    <Link
+                        to={GITHUB_ACCOUNT}
+                        target="_blank"
+                        className="btn hire-me"
+                    >
+                        {portfolioData.portfolioMoreButtonLabel}
+                    </Link>
+                </div>
+            </Suspense>
         );
     };
 
