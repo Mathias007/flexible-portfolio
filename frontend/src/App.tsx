@@ -27,7 +27,7 @@ function App(): JSX.Element {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
     const [favicon, setFavicon] = useState<string>(warmFavicon);
 
-    const [isMenuClosed, setIsMenuClosed] = useState<boolean>(false);
+    const [isMenuClosed, setIsMenuClosed] = useState<boolean>(window.innerWidth <= 1199);
 
     const toggleMenu = () => {
         setIsMenuClosed(!isMenuClosed);
