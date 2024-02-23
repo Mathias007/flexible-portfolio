@@ -3907,7 +3907,7 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-favicon@^2.0.3:
+react-favicon@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-favicon/-/react-favicon-2.0.3.tgz#dfb54562ca91b1e239f5447a5c8c43817c262b78"
   integrity sha512-eKtog0JO29rxkSHwq48t9EtLLeLtL0YzJsWDrtGr30c/yRt6GQUgHZizjIVJ/24e/MAHKFZg5jVnca+lvcTSZA==

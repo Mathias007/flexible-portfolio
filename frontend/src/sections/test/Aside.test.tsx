@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 test("renders Aside component correctly", () => {
     render(
         <MemoryRouter>
-            <Aside />
+            <Aside isMenuClosed={false} toggler={() => console.log("toggler")} />
         </MemoryRouter>
     );
     const asideElement = screen.getByTestId("aside-section");
