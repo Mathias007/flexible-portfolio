@@ -1,10 +1,7 @@
 import { FC, useEffect, useState } from "react";
 
 import { Title } from "../components/general";
-import {
-    PortfolioHeading,
-    PortfolioContent,
-} from "../components/Portfolio";
+import { PortfolioHeading, PortfolioContent } from "../components/Portfolio";
 
 import { portfolioModels } from "../config/models";
 import { ConfigVariables, ServerPaths } from "../config/global";
@@ -14,7 +11,9 @@ const { SERVER_URL } = ConfigVariables;
 const { API, PORTFOLIO } = ServerPaths;
 
 const Portfolio: FC = () => {
-    const [portfolioData, setPortfolioData] = useState<portfolioModels.IPortfolioData[]>([]);
+    const [portfolioData, setPortfolioData] = useState<
+        portfolioModels.IPortfolioData[]
+    >([]);
 
     useEffect(() => {
         const fetchPortfolioData = async () => {
@@ -32,7 +31,7 @@ const Portfolio: FC = () => {
 
         fetchPortfolioData();
     }, []);
-    
+
     return (
         <section
             className="portfolio section"
