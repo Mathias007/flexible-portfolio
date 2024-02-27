@@ -1,0 +1,49 @@
+.portfolio {
+    & .container {
+        padding-bottom: 40px;
+    }
+
+    & .portfolio-heading {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 40px;
+
+        & h2 {
+            color: var(--text-black-900);
+            font-weight: 500;
+        }
+    }
+
+    & .portfolio-item {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        margin-bottom: 30px;
+
+        & .portfolio-item-inner {
+            background-color: var(--bg-black-100);
+            border: 1px solid var(--bg-black-50);
+            border-radius: 10px;
+            padding: 30px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+    
+            &:hover {
+                box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+            }
+    
+            & h4 {
+                font-size: 18px;
+                margin-bottom: 15px;
+                color: var(--text-black-900);
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+    
+            & p {
+                font-size: 16px;
+                color: var(--text-black-700);
+                line-height: 25px;
+            }
+        }
+    }
+}
