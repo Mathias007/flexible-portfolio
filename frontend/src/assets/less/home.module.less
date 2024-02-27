@@ -1,0 +1,73 @@
+.home {
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900);
+
+    .home-info {
+        flex: 0 0 60%;
+        max-width: 60%;
+
+        h3.hello {
+            font-size: 28px;
+            margin: 15px 0;
+
+            span {
+                font-family: "Clicker Script", cursive;
+                font-size: 30px;
+                font-weight: 700;
+                color: var(--skin-color);
+            }
+        }
+
+        h3.my-proffesion {
+            font-size: 30px;
+            margin: 15px 0;
+        }
+
+        .typing {
+            color: var(--skin-color);
+        }
+
+        p {
+            margin-bottom: 70px;
+            font-size: 20px;
+            color: var(--text-black-700);
+        }
+    }
+
+    .home-img {
+        flex: 0 0 40%;
+        max-width: 40%;
+        text-align: center;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            border: 10px solid var(--skin-color);
+        }
+
+        &::before {
+            border-top-color: transparent;
+            border-left-color: transparent;
+            left: -20px;
+            top: -40px;
+        }
+
+        &::after {
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            right: 20px;
+            bottom: -40px;
+        }
+
+        img {
+            margin: auto;
+            border-radius: 5px;
+            height: 400px;
+        }
+    }
+}
